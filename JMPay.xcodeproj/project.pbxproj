@@ -33,7 +33,8 @@
 		E87A39DE225CEFF200953DDB /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */; };
 		E87A39E0225CF60100953DDB /* JMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39DF225CF60100953DDB /* JMImageView.swift */; };
 		E87A39E2225D01E900953DDB /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */; };
-		E87A39E4225D044500953DDB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E3225D044500953DDB /* UIColor+Extension.swift */; };
+		E87A39E4225D044500953DDB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E3225D044500953DDB /* UIColor+Extensions.swift */; };
+		E87A39E6225D2CB100953DDB /* JMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E5225D2CB100953DDB /* JMButton.swift */; };
 		FDB485F8E07F3F4FB8E90500 /* Pods_JMPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3354785234E1090524D2E917 /* Pods_JMPay.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +95,8 @@
 		E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		E87A39DF225CF60100953DDB /* JMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMImageView.swift; sourceTree = "<group>"; };
 		E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
-		E87A39E3225D044500953DDB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E87A39E3225D044500953DDB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39E5225D2CB100953DDB /* JMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				E87A39DB225CECBC00953DDB /* ReusableView.swift */,
 				E87A39DF225CF60100953DDB /* JMImageView.swift */,
 				E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */,
+				E87A39E5225D2CB100953DDB /* JMButton.swift */,
 			);
 			path = JMPay;
 			sourceTree = "<group>";
@@ -226,7 +229,7 @@
 				E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */,
 				E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */,
 				E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */,
-				E87A39E3225D044500953DDB /* UIColor+Extension.swift */,
+				E87A39E3225D044500953DDB /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			files = (
 				E87A39CB225CDB6C00953DDB /* UIImageView+Extensions.swift in Sources */,
 				E87A39DC225CECBC00953DDB /* ReusableView.swift in Sources */,
+				E87A39E6225D2CB100953DDB /* JMButton.swift in Sources */,
 				E87A39C2225CD88C00953DDB /* WebConnection.swift in Sources */,
 				E87A39D1225CDF7A00953DDB /* ContactsViewController.swift in Sources */,
 				E87A39BC225CD77000953DDB /* RequestManager.swift in Sources */,
@@ -502,7 +506,7 @@
 				E87A39C7225CDABA00953DDB /* Dictionary+Extensions.swift in Sources */,
 				E87A39D3225CDFC200953DDB /* ContactsViewModel.swift in Sources */,
 				E87A39CD225CDC8C00953DDB /* APIError.swift in Sources */,
-				E87A39E4225D044500953DDB /* UIColor+Extension.swift in Sources */,
+				E87A39E4225D044500953DDB /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

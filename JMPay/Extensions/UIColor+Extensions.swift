@@ -9,6 +9,11 @@
 import UIKit
 
 extension UIColor {
+    
+    static var mainTint: UIColor {
+        return UIColor(hex: "#11C76F")
+    }
+    
     convenience public init(hex: String) {
         
         let hexString: String = (hex as NSString).trimmingCharacters(in: .whitespacesAndNewlines)

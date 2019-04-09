@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.0
         
+        window?.tintColor = UIColor.mainTint
+        
         return true
     }
 

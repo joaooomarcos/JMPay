@@ -119,31 +119,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2q1-wi-qAQ">
-                                <rect key="frame" x="67" y="298.5" width="240" height="70"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTs-kX-Yk1">
+                                <rect key="frame" x="20" y="216" width="335" height="235.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit-card" translatesAutoresizingMaskIntoConstraints="NO" id="2q1-wi-qAQ">
+                                        <rect key="frame" x="117.5" y="0.0" width="100" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="jVd-qc-fOu"/>
+                                            <constraint firstAttribute="width" constant="100" id="wuK-if-hLl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre um cartão de crédito" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-yb-doM">
+                                        <rect key="frame" x="0.0" y="102" width="335" height="67"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para fazer pagamentos para outras pessoas você precisa cadastrar um cartão de crédito pessoal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFm-uS-Rhl">
+                                        <rect key="frame" x="16" y="185" width="303" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="0.79615977112676062" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="jVd-qc-fOu"/>
-                                    <constraint firstAttribute="width" constant="100" id="wuK-if-hLl"/>
+                                    <constraint firstAttribute="bottom" secondItem="zFm-uS-Rhl" secondAttribute="bottom" id="9UB-33-plK"/>
+                                    <constraint firstItem="zFm-uS-Rhl" firstAttribute="top" secondItem="Jzh-yb-doM" secondAttribute="bottom" constant="16" id="Avu-Se-Nou"/>
+                                    <constraint firstItem="zFm-uS-Rhl" firstAttribute="leading" secondItem="zTs-kX-Yk1" secondAttribute="leading" constant="16" id="EUI-zJ-KyV"/>
+                                    <constraint firstItem="Jzh-yb-doM" firstAttribute="leading" secondItem="zTs-kX-Yk1" secondAttribute="leading" id="L27-hY-VCz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jzh-yb-doM" secondAttribute="trailing" id="QFG-sc-ER6"/>
+                                    <constraint firstItem="2q1-wi-qAQ" firstAttribute="centerX" secondItem="zTs-kX-Yk1" secondAttribute="centerX" id="bB5-Rc-CCd"/>
+                                    <constraint firstItem="zFm-uS-Rhl" firstAttribute="centerX" secondItem="zTs-kX-Yk1" secondAttribute="centerX" id="eAV-jV-4Pt"/>
+                                    <constraint firstItem="Jzh-yb-doM" firstAttribute="top" secondItem="2q1-wi-qAQ" secondAttribute="bottom" constant="32" id="h6N-Gs-KO7"/>
+                                    <constraint firstItem="2q1-wi-qAQ" firstAttribute="top" secondItem="zTs-kX-Yk1" secondAttribute="top" id="qQg-IO-39g"/>
+                                    <constraint firstItem="Jzh-yb-doM" firstAttribute="centerX" secondItem="zTs-kX-Yk1" secondAttribute="centerX" id="weQ-0G-a7n"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-yb-doM">
-                                <rect key="frame" x="166" y="396" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFm-uS-Rhl">
-                                <rect key="frame" x="166" y="441" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2q1-wi-qAQ" firstAttribute="centerY" secondItem="Olp-a6-Wxd" secondAttribute="centerY" id="XPb-eH-UiR"/>
+                            <constraint firstItem="zTs-kX-Yk1" firstAttribute="centerY" secondItem="Olp-a6-Wxd" secondAttribute="centerY" id="7FH-Ad-WtA"/>
+                            <constraint firstItem="zTs-kX-Yk1" firstAttribute="centerX" secondItem="Olp-a6-Wxd" secondAttribute="centerX" id="KJF-OH-OlN"/>
+                            <constraint firstItem="zTs-kX-Yk1" firstAttribute="centerX" secondItem="Olp-a6-Wxd" secondAttribute="centerX" id="azz-x5-TQ2"/>
+                            <constraint firstItem="zTs-kX-Yk1" firstAttribute="leading" secondItem="Olp-a6-Wxd" secondAttribute="leading" constant="20" id="ooI-tg-bQJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="urv-0B-ZaI"/>
                     </view>
@@ -171,5 +190,8 @@
             <point key="canvasLocation" x="813.60000000000002" y="162.3688155922039"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="credit-card" width="100" height="70.5"/>
+    </resources>
     <color key="tintColor" red="0.066666666666666666" green="0.7803921568627451" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
