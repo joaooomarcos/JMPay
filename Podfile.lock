@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - AlamofireNetworkActivityIndicator (2.3.0):
+    - Alamofire (~> 4.7)
+  - AlamofireNetworkActivityLogger (2.4.0):
+    - Alamofire (~> 4.8)
+  - SwiftLint (0.31.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - AlamofireNetworkActivityIndicator
+  - AlamofireNetworkActivityLogger
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireNetworkActivityIndicator
+    - AlamofireNetworkActivityLogger
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  AlamofireNetworkActivityIndicator: 18346ff6d770d9513d0ac6f2d99706f40f93dbaa
+  AlamofireNetworkActivityLogger: 6d3398c692d2c5d83b0c58793537860aca1e383d
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+
+PODFILE CHECKSUM: dd312f748041f0085f21036abda591e94dcb3bd0
+
+COCOAPODS: 1.6.1
