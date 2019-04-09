@@ -14,6 +14,15 @@
 		E87A3998225CD21F00953DDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87A3996225CD21F00953DDB /* LaunchScreen.storyboard */; };
 		E87A39A3225CD21F00953DDB /* JMPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39A2225CD21F00953DDB /* JMPayTests.swift */; };
 		E87A39AE225CD21F00953DDB /* JMPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39AD225CD21F00953DDB /* JMPayUITests.swift */; };
+		E87A39BC225CD77000953DDB /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39BB225CD77000953DDB /* RequestManager.swift */; };
+		E87A39BE225CD79100953DDB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39BD225CD79100953DDB /* Endpoint.swift */; };
+		E87A39C0225CD7B600953DDB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39BF225CD7B600953DDB /* HTTPMethod.swift */; };
+		E87A39C2225CD88C00953DDB /* WebConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C1225CD88C00953DDB /* WebConnection.swift */; };
+		E87A39C4225CD8B000953DDB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C3225CD8B000953DDB /* Result.swift */; };
+		E87A39C7225CDABA00953DDB /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */; };
+		E87A39C9225CDB1500953DDB /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */; };
+		E87A39CB225CDB6C00953DDB /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */; };
+		E87A39CD225CDC8C00953DDB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39CC225CDC8C00953DDB /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,16 @@
 		E87A39A9225CD21F00953DDB /* JMPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87A39AD225CD21F00953DDB /* JMPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMPayUITests.swift; sourceTree = "<group>"; };
 		E87A39AF225CD21F00953DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E87A39BB225CD77000953DDB /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		E87A39BD225CD79100953DDB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E87A39BF225CD7B600953DDB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E87A39C1225CD88C00953DDB /* WebConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnection.swift; sourceTree = "<group>"; };
+		E87A39C3225CD8B000953DDB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39CC225CDC8C00953DDB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FDD792B8C26B07AB7D58BC7A /* Pods-JMPayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.debug.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +93,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA4EE026502C83A445FE7144 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5435B9D9809520EA0D5A8273 /* Pods_JMPay.framework */,
+				3441C1E14043D45855FA71AE /* Pods_JMPayTests.framework */,
+				D754AC1708BF9BE9D85C8894 /* Pods_JMPayUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA5C19209944FFA787B888F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61CE3B7CEA5BD229D6598B60 /* Pods-JMPay.debug.xcconfig */,
+				D4191D424C6870018602837C /* Pods-JMPay.release.xcconfig */,
+				8DB03E925A2CA02F85911580 /* Pods-JMPayTests.debug.xcconfig */,
+				314EE83DCBDC63689422D461 /* Pods-JMPayTests.release.xcconfig */,
+				FDD792B8C26B07AB7D58BC7A /* Pods-JMPayUITests.debug.xcconfig */,
+				E1E9444113A2F73A60D3D7B6 /* Pods-JMPayUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E87A3981225CD21B00953DDB = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +145,10 @@
 				E87A3994225CD21F00953DDB /* Assets.xcassets */,
 				E87A3996225CD21F00953DDB /* LaunchScreen.storyboard */,
 				E87A3999225CD21F00953DDB /* Info.plist */,
+				E87A39C5225CDA0700953DDB /* WebConnection */,
+				E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */,
+				E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */,
+				E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */,
 			);
 			path = JMPay;
 			sourceTree = "<group>";
@@ -123,6 +169,19 @@
 				E87A39AF225CD21F00953DDB /* Info.plist */,
 			);
 			path = JMPayUITests;
+			sourceTree = "<group>";
+		};
+		E87A39C5225CDA0700953DDB /* WebConnection */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39BB225CD77000953DDB /* RequestManager.swift */,
+				E87A39BD225CD79100953DDB /* Endpoint.swift */,
+				E87A39BF225CD7B600953DDB /* HTTPMethod.swift */,
+				E87A39C1225CD88C00953DDB /* WebConnection.swift */,
+				E87A39C3225CD8B000953DDB /* Result.swift */,
+				E87A39CC225CDC8C00953DDB /* APIError.swift */,
+			);
+			path = WebConnection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E87A39CB225CDB6C00953DDB /* UIImageView+Extensions.swift in Sources */,
+				E87A39C2225CD88C00953DDB /* WebConnection.swift in Sources */,
+				E87A39BC225CD77000953DDB /* RequestManager.swift in Sources */,
 				E87A3990225CD21B00953DDB /* ViewController.swift in Sources */,
+				E87A39BE225CD79100953DDB /* Endpoint.swift in Sources */,
+				E87A39C4225CD8B000953DDB /* Result.swift in Sources */,
+				E87A39C0225CD7B600953DDB /* HTTPMethod.swift in Sources */,
 				E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */,
+				E87A39C9225CDB1500953DDB /* JSONDecoder+Extensions.swift in Sources */,
+				E87A39C7225CDABA00953DDB /* Dictionary+Extensions.swift in Sources */,
+				E87A39CD225CDC8C00953DDB /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
