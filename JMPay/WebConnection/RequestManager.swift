@@ -31,9 +31,18 @@ class RequestManager {
                             let object = try decoder.decode(T.self, fromDict: resDic)
                             completion(.success(object))
                         } catch {
-                            completion(.error(APIError.invalidData))
+                            completion(.error(APIError.jsonConversionFailure))
                         }
-                        
+                    } else if let resDic = resValue as? [[String: Any]] {
+                        let decoder = JSONDecoder()
+                        do {
+                            let objects = try decoder.decode(T.self, fromArray: resDic)
+                            completion(.success(objects))
+                        } catch {
+                            completion (.error(APIError.jsonConversionFailure))
+                        }
+                    } else {
+                        completion(.error(APIError.jsonParsingFailure))
                     }
                 case .failure(let error):
                     completion(.error(error))

@@ -13,4 +13,9 @@ extension JSONDecoder {
         let data = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
         return try self.decode(type, from: data)
     }
+    
+    func decode<T>(_ type: T.Type, fromArray array: [[AnyHashable: Any]]) throws -> T where T: Decodable {
+        let data = try JSONSerialization.data(withJSONObject: array, options: .prettyPrinted)
+        return try self.decode(type, from: data)
+    }
 }

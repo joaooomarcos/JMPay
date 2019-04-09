@@ -12,8 +12,8 @@ typealias HTTPHeaders = [String: String]
 
 enum WebConnection {
     
-    static func request<T: Decodable>(url: URL, method: HTTPMethod = .get, parameters: [String: Any] = [:], headers: HTTPHeaders = [:], completion: @escaping (_ result: Result<T>) -> Void) {
+    static func request<T: Decodable>(endpoint: Endpoint, method: HTTPMethod = .get, parameters: [String: Any] = [:], headers: HTTPHeaders = [:], completion: @escaping (_ result: Result<T>) -> Void) {
         
-        RequestManager().request(url: url, method: method.toAlamofire(), parameters: parameters, headers: headers, completion: completion)
+        RequestManager().request(url: endpoint.url, method: method.toAlamofire(), parameters: parameters, headers: headers, completion: completion)
     }
 }

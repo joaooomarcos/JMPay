@@ -9,7 +9,9 @@
 import AlamofireImage
 
 extension UIImageView {
-    func setImage(with URL: URL) {
-        self.af_setImage(withURL: URL, placeholderImage: nil, imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: false)
+    func setImage(with string: String?) {
+        if let str = string, !str.isEmpty, let url = URL(string: str) {
+            self.af_setImage(withURL: url, imageTransition: .crossDissolve(0.3), runImageTransitionIfCached: false)
+        }
     }
 }
