@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol Endpoint {
     
     var base: String { get }
@@ -20,7 +18,7 @@ protocol Endpoint {
 extension Endpoint {
     
     var base: String {
-        return "https://api.themoviedb.org"
+        return "http://careers.picpay.com/tests/mobdev"
     }
     
     var url: URL {

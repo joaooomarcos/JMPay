@@ -14,17 +14,6 @@ enum WebConnection {
     
     static func request<T: Decodable>(url: URL, method: HTTPMethod = .get, parameters: [String: Any] = [:], headers: HTTPHeaders = [:], completion: @escaping (_ result: Result<T>) -> Void) {
         
-        let allParams = self.addDefaultParams(parameters)
-        
-        RequestManager().request(url: url, method: method.toAlamofire(), parameters: allParams, headers: headers, completion: completion)
+        RequestManager().request(url: url, method: method.toAlamofire(), parameters: parameters, headers: headers, completion: completion)
     }
-    
-    static private func addDefaultParams(_ inParams: [String: Any]) -> [String: Any] {
-        var params: [String: Any] = [:]
-        
-        params += inParams
-        
-        return params
-    }
-    
 }
