@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+class ContactsAPI {
+    func getContactList(completion: @escaping (Result<[Contact]>) -> Void) {
+        WebConnection.request(endpoint: ContactsEndpoint.getList, completion: completion)
+    }
+}
+
+enum ContactsEndpoint {
+    case getList
+}
+
+extension ContactsEndpoint: Endpoint {
+    var path: String {
+        switch self {
+        case .getList:
+            return "users"
+        }
+    }
+}
