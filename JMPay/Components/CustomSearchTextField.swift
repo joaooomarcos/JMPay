@@ -34,10 +34,10 @@ class CustomSearchBarView: UIView {
     }
     
     private func setupTextField() {
-        textfield.frame = CGRect(x: 16, y: 0, width: self.frame.width - 32, height: self.frame.height)
+        textfield.frame = CGRect(x: 16, y: 6, width: self.frame.width - 32, height: self.frame.height - 12)
         textfield.backgroundColor = UIColor(hex: "#2B2C2F")
         textfield.clipsToBounds = true
-        textfield.layer.cornerRadius = self.frame.height / 2.0
+        textfield.layer.cornerRadius = (self.frame.height - 12.0) / 2.0
         textfield.textColor = UIColor.white
         
         self.addSubview(textfield)

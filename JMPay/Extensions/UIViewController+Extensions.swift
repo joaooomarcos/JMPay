@@ -9,11 +9,12 @@
 import UIKit
 
 extension UIViewController {
-    func setupNavigation() {
+    func setupNavigation(preferLarge: Bool = false) {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.prefersLargeTitles = preferLarge
     }
 }

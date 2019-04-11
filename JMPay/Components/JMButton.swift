@@ -57,6 +57,8 @@ class JMButton: UIButton {
         self.layer.cornerRadius = JMButton.HEIGHT / 2.0
         self.layer.masksToBounds = true
         self.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        self.setTitleColor(.white, for: .disabled)
+        self.setTitleColor(.white, for: .normal)
     }
     
     private func updateLayout() {

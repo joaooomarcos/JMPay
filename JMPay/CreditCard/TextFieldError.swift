@@ -17,7 +17,7 @@ extension TextFieldError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .invalid(let text):
-            return NSLocalizedString("\(text) inválido", comment: "Invalid field")
+            return NSLocalizedString(text, comment: "Invalid field")
         case .empty:
             return NSLocalizedString("preencha o campo", comment: "Empty field")
         }

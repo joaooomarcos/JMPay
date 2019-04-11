@@ -53,7 +53,6 @@ class CreditCardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigation()
         self.setupTextFields()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -61,6 +60,11 @@ class CreditCardTableViewController: UITableViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         self.tableView.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupNavigation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +89,10 @@ class CreditCardTableViewController: UITableViewController {
     private func keyboardWillHide(_ notification: Notification) {
         self.keyboardHeight = 0.0
         self.updateButtonLayout()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8.0
     }
     
     // MARK: - Setups
@@ -144,28 +152,28 @@ class CreditCardTableViewController: UITableViewController {
         
         if (numberTextField.text ?? "").count < 19 && !(numberTextField.text ?? "").isEmpty {
             if showError {
-                numberTextField.setError(TextFieldError.invalid("número"), animated: true)
+                numberTextField.setError(TextFieldError.invalid("número inválido"), animated: true)
             }
             valid = false
         }
         
         if (nameTextField.text ?? "").count < 3 && !(nameTextField.text ?? "").isEmpty {
             if showError {
-                nameTextField.setError(TextFieldError.invalid("nome"), animated: true)
+                nameTextField.setError(TextFieldError.invalid("nome inválido"), animated: true)
             }
             valid = false
         }
         
         if (expireTextField.text ?? "").count != 7 && !(expireTextField.text ?? "").isEmpty {
             if showError {
-                expireTextField.setError(TextFieldError.invalid("data"), animated: true)
+                expireTextField.setError(TextFieldError.invalid("data inválida"), animated: true)
             }
             valid = false
         }
         
         if (cvvTextField.text ?? "").count < 3 && !(cvvTextField.text ?? "").isEmpty {
             if showError {
-                cvvTextField.setError(TextFieldError.invalid("cvv"), animated: true)
+                cvvTextField.setError(TextFieldError.invalid("cvv inválido"), animated: true)
             }
             valid = false
         }

@@ -30,9 +30,13 @@ class ContactsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigation()
         self.setup()
         self.loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupNavigation(preferLarge: true)
     }
     
     // MARK: - Privates
