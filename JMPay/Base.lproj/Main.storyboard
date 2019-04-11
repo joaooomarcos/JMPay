@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="156" width="375" height="511"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="76" id="dcw-BF-Cgz" customClass="ContactTableViewCell" customModule="JMPay" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="76" id="dcw-BF-Cgz" customClass="ContactTableViewCell" customModule="JMPay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcw-BF-Cgz" id="RWV-Sy-gRo">
@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1752.8" y="162.3688155922039"/>
         </scene>
-        <!--View Controller-->
+        <!--Priming Card View Controller-->
         <scene sceneID="ScV-fb-vol">
             <objects>
-                <viewController id="uKR-BC-pF2" sceneMemberID="viewController">
+                <viewController id="uKR-BC-pF2" customClass="PrimingCardViewController" customModule="JMPay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Olp-a6-Wxd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -405,11 +405,116 @@
                         <outlet property="expireTextField" destination="Q3m-3L-44z" id="WPg-zw-iA4"/>
                         <outlet property="nameTextField" destination="Mfo-hv-fwY" id="y2y-fT-2vX"/>
                         <outlet property="numberTextField" destination="dwR-kS-NWo" id="yPM-Kf-QNL"/>
+                        <segue destination="n6s-70-pRi" kind="show" identifier="showPrimingCardController" id="avu-ZQ-IDs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yf9-ox-75D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3439.1999999999998" y="150.67466266866569"/>
+        </scene>
+        <!--Transfer Value View Controller-->
+        <scene sceneID="xCq-2e-jJt">
+            <objects>
+                <viewController id="n6s-70-pRi" customClass="TransferValueViewController" customModule="JMPay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FGd-4F-TL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="he1-sJ-n2w" customClass="JMImageView" customModule="JMPay" customModuleProvider="target">
+                                <rect key="frame" x="167.5" y="140" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.20172205109999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8ls-xE-WCK"/>
+                                    <constraint firstAttribute="width" secondItem="he1-sJ-n2w" secondAttribute="height" id="c7i-eO-QKi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundCircle" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O0-YZ-a1R">
+                                <rect key="frame" x="20" y="188" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xbm-6H-Tf8">
+                                <rect key="frame" x="115" y="237" width="145" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-0Q-rES">
+                                        <rect key="frame" x="0.0" y="22" width="23" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.39758472711267606" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0,00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-fB-iqY">
+                                        <rect key="frame" x="31" y="0.0" width="114" height="65"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.39758472709999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="54"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkP-do-tmZ">
+                                <rect key="frame" x="98.5" y="342" width="178" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mastercard 1234 • " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzJ-QZ-tqF">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0W9-GQ-Lan">
+                                        <rect key="frame" x="128" y="0.0" width="50" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="EDITAR"/>
+                                        <connections>
+                                            <action selector="editButtonTapped" destination="n6s-70-pRi" eventType="touchUpInside" id="abI-Hh-AVN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9J-Cx-op6" customClass="JMButton" customModule="JMPay" customModuleProvider="target">
+                                <rect key="frame" x="12" y="607" width="351" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="uAi-XR-Eti"/>
+                                </constraints>
+                                <state key="normal" title="Pagar"/>
+                                <connections>
+                                    <action selector="payButtonTapped" destination="n6s-70-pRi" eventType="touchUpInside" id="OzH-uX-yGq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6O0-YZ-a1R" firstAttribute="top" secondItem="he1-sJ-n2w" secondAttribute="bottom" constant="8" id="5aN-F3-aCb"/>
+                            <constraint firstItem="ktq-7T-yYY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xbm-6H-Tf8" secondAttribute="trailing" constant="20" id="BJK-LP-OKY"/>
+                            <constraint firstItem="6O0-YZ-a1R" firstAttribute="leading" secondItem="ktq-7T-yYY" secondAttribute="leading" constant="20" id="Bjq-uK-WQm"/>
+                            <constraint firstItem="6O0-YZ-a1R" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="Jgj-np-MLQ"/>
+                            <constraint firstItem="he1-sJ-n2w" firstAttribute="top" secondItem="ktq-7T-yYY" secondAttribute="top" constant="24" id="PaK-MX-U64"/>
+                            <constraint firstItem="dkP-do-tmZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ktq-7T-yYY" secondAttribute="leading" constant="20" id="Q08-52-Msg"/>
+                            <constraint firstItem="v9J-Cx-op6" firstAttribute="leading" secondItem="ktq-7T-yYY" secondAttribute="leading" constant="12" id="RtA-iY-DFY"/>
+                            <constraint firstItem="v9J-Cx-op6" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="UkE-98-Zwu"/>
+                            <constraint firstItem="dkP-do-tmZ" firstAttribute="top" secondItem="Xbm-6H-Tf8" secondAttribute="bottom" constant="40" id="X8r-v2-z52"/>
+                            <constraint firstItem="Xbm-6H-Tf8" firstAttribute="top" secondItem="6O0-YZ-a1R" secondAttribute="bottom" constant="32" id="aTw-ax-8i6"/>
+                            <constraint firstItem="dkP-do-tmZ" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="crE-jU-qFC"/>
+                            <constraint firstItem="he1-sJ-n2w" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="fhT-bS-VGh"/>
+                            <constraint firstItem="ktq-7T-yYY" firstAttribute="bottom" secondItem="v9J-Cx-op6" secondAttribute="bottom" constant="12" id="nmE-Cb-Vr5"/>
+                            <constraint firstItem="Xbm-6H-Tf8" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="yyL-Px-nqb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ktq-7T-yYY"/>
+                    </view>
+                    <connections>
+                        <outlet property="creditCardLabel" destination="KzJ-QZ-tqF" id="ljq-nJ-0vD"/>
+                        <outlet property="payButton" destination="v9J-Cx-op6" id="d92-mr-4PW"/>
+                        <outlet property="symbolLabel" destination="ce7-0Q-rES" id="Nli-xb-1EU"/>
+                        <outlet property="userImage" destination="he1-sJ-n2w" id="MWv-3A-5aM"/>
+                        <outlet property="usernameLabel" destination="6O0-YZ-a1R" id="dnr-er-z2p"/>
+                        <outlet property="valueTextField" destination="n2z-fB-iqY" id="ANr-Wc-4s0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8E1-he-U1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4316" y="154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Py-3M-ArM">

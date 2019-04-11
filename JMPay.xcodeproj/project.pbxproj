@@ -39,6 +39,9 @@
 		E87A39E2225D01E900953DDB /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */; };
 		E87A39E4225D044500953DDB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E3225D044500953DDB /* UIColor+Extensions.swift */; };
 		E87A39E6225D2CB100953DDB /* JMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E5225D2CB100953DDB /* JMButton.swift */; };
+		E87A39EC225F9C8D00953DDB /* TransferValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39EB225F9C8D00953DDB /* TransferValueViewController.swift */; };
+		E87A39EE225F9F8F00953DDB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */; };
+		E87A39F1225FA51E00953DDB /* PrimingCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39F0225FA51E00953DDB /* PrimingCardViewController.swift */; };
 		FDB485F8E07F3F4FB8E90500 /* Pods_JMPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3354785234E1090524D2E917 /* Pods_JMPay.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,9 @@
 		E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
 		E87A39E3225D044500953DDB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		E87A39E5225D2CB100953DDB /* JMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMButton.swift; sourceTree = "<group>"; };
+		E87A39EB225F9C8D00953DDB /* TransferValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferValueViewController.swift; sourceTree = "<group>"; };
+		E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39F0225FA51E00953DDB /* PrimingCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimingCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,8 @@
 		E87A398C225CD21B00953DDB /* JMPay */ = {
 			isa = PBXGroup;
 			children = (
+				E87A39EF225FA4E400953DDB /* PrimingCard */,
+				E87A39EA225F9C7800953DDB /* TransferValue */,
 				1719D1AC225EEDA000BCD5E4 /* CreditCard */,
 				E87A39CF225CDF5400953DDB /* Contacts */,
 				E87A398D225CD21B00953DDB /* AppDelegate.swift */,
@@ -202,10 +210,7 @@
 				E87A3999225CD21F00953DDB /* Info.plist */,
 				E87A39C5225CDA0700953DDB /* WebConnection */,
 				E87A39CE225CDEA600953DDB /* Extensions */,
-				E87A39DB225CECBC00953DDB /* ReusableView.swift */,
-				E87A39DF225CF60100953DDB /* JMImageView.swift */,
-				E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */,
-				E87A39E5225D2CB100953DDB /* JMButton.swift */,
+				E87A39E9225F9C6600953DDB /* Components */,
 			);
 			path = JMPay;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				E87A39E3225D044500953DDB /* UIColor+Extensions.swift */,
 				1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */,
 				1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */,
+				E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +278,33 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		E87A39E9225F9C6600953DDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39DB225CECBC00953DDB /* ReusableView.swift */,
+				E87A39DF225CF60100953DDB /* JMImageView.swift */,
+				E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */,
+				E87A39E5225D2CB100953DDB /* JMButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E87A39EA225F9C7800953DDB /* TransferValue */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39EB225F9C8D00953DDB /* TransferValueViewController.swift */,
+			);
+			path = TransferValue;
+			sourceTree = "<group>";
+		};
+		E87A39EF225FA4E400953DDB /* PrimingCard */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39F0225FA51E00953DDB /* PrimingCardViewController.swift */,
+			);
+			path = PrimingCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +548,7 @@
 				1719D1B4225EF72F00BCD5E4 /* String+Extensions.swift in Sources */,
 				E87A39C2225CD88C00953DDB /* WebConnection.swift in Sources */,
 				E87A39D1225CDF7A00953DDB /* ContactsViewController.swift in Sources */,
+				E87A39EC225F9C8D00953DDB /* TransferValueViewController.swift in Sources */,
 				E87A39BC225CD77000953DDB /* RequestManager.swift in Sources */,
 				E87A39DE225CEFF200953DDB /* ContactTableViewCell.swift in Sources */,
 				E87A39DA225CE9C800953DDB /* ContactsAPI.swift in Sources */,
@@ -524,11 +558,13 @@
 				E87A39E2225D01E900953DDB /* CustomSearchTextField.swift in Sources */,
 				1719D1B0225EEDEE00BCD5E4 /* CreditCardTableViewController.swift in Sources */,
 				1719D1B6225F016700BCD5E4 /* TextFieldError.swift in Sources */,
+				E87A39F1225FA51E00953DDB /* PrimingCardViewController.swift in Sources */,
 				E87A39D7225CE01B00953DDB /* ContactViewModel.swift in Sources */,
 				E87A39C4225CD8B000953DDB /* Result.swift in Sources */,
 				E87A39C0225CD7B600953DDB /* HTTPMethod.swift in Sources */,
 				E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */,
 				E87A39C9225CDB1500953DDB /* JSONDecoder+Extensions.swift in Sources */,
+				E87A39EE225F9F8F00953DDB /* UIViewController+Extensions.swift in Sources */,
 				E87A39C7225CDABA00953DDB /* Dictionary+Extensions.swift in Sources */,
 				E87A39D3225CDFC200953DDB /* ContactsViewModel.swift in Sources */,
 				E87A39CD225CDC8C00953DDB /* APIError.swift in Sources */,

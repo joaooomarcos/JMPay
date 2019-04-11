@@ -20,7 +20,6 @@ class CreditCardTableViewController: UITableViewController {
                 self.oldValue = allFieldsValid
                 self.updateButtonLayout()
             }
-            
         }
     }
     
@@ -54,6 +53,7 @@ class CreditCardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigation()
         self.setupTextFields()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -103,8 +103,14 @@ class CreditCardTableViewController: UITableViewController {
     
     private func addButton() {
         self.mainButton = JMButton(title: "Salvar", addIn: self.tableView)
+        self.mainButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         self.mainButton?.alpha = 0.0
         self.updateButtonLayout()
+    }
+    
+    @objc
+    private func saveButtonTapped() {
+        self.performSegue(withIdentifier: "showPrimingCardController", sender: nil)
     }
     
     private func updateButtonLayout() {
