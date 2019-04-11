@@ -73,7 +73,9 @@ extension ContactsViewController: UITableViewDataSource {
 // MARK: - Table View Delegate
 
 extension ContactsViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showPrimingCardController", sender: nil)
+    }
 }
 
 extension ContactsViewController: CustomSearchBarDelegate {
