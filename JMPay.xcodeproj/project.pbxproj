@@ -11,6 +11,7 @@
 		1719D1B2225EF70800BCD5E4 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */; };
 		1719D1B4225EF72F00BCD5E4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */; };
 		1719D1B6225F016700BCD5E4 /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1B5225F016700BCD5E4 /* TextFieldError.swift */; };
+		17B64825225FDE3600EB37BE /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B64824225FDE3600EB37BE /* ReceiptViewController.swift */; };
 		59BC76D12E934C9047613AE7 /* Pods_JMPayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63862815B3E4058D02692FE8 /* Pods_JMPayUITests.framework */; };
 		5B6AD49C65286F2CCE906485 /* Pods_JMPayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E0D222E824246CCA647F68 /* Pods_JMPayTests.framework */; };
 		E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A398D225CD21B00953DDB /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1719D1B5225F016700BCD5E4 /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
+		17B64824225FDE3600EB37BE /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
 		28E5292785F7EFD5CD920B95 /* Pods-JMPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPay.debug.xcconfig"; path = "Target Support Files/Pods-JMPay/Pods-JMPay.debug.xcconfig"; sourceTree = "<group>"; };
 		2A6BA5CA844E8BC4B528B5FB /* Pods-JMPayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.release.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3354785234E1090524D2E917 /* Pods_JMPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,14 @@
 			path = CreditCard;
 			sourceTree = "<group>";
 		};
+		17B64823225FDE1400EB37BE /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				17B64824225FDE3600EB37BE /* ReceiptViewController.swift */,
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
 		8DC6A1BD169DA2FE38FDB738 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +190,6 @@
 				E87A39A1225CD21F00953DDB /* JMPayTests */,
 				E87A39AC225CD21F00953DDB /* JMPayUITests */,
 				E87A398B225CD21B00953DDB /* Products */,
-				E87A39D8225CE91600953DDB /* Recovered References */,
 				B4B81C54C2C74976BFC571D2 /* Pods */,
 				8DC6A1BD169DA2FE38FDB738 /* Frameworks */,
 			);
@@ -199,6 +208,7 @@
 		E87A398C225CD21B00953DDB /* JMPay */ = {
 			isa = PBXGroup;
 			children = (
+				17B64823225FDE1400EB37BE /* Receipt */,
 				E87A39EF225FA4E400953DDB /* PrimingCard */,
 				E87A39EA225F9C7800953DDB /* TransferValue */,
 				1719D1AC225EEDA000BCD5E4 /* CreditCard */,
@@ -271,13 +281,6 @@
 				E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */,
 			);
 			path = Contacts;
-			sourceTree = "<group>";
-		};
-		E87A39D8225CE91600953DDB /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		E87A39E9225F9C6600953DDB /* Components */ = {
@@ -555,6 +558,7 @@
 				E87A39E0225CF60100953DDB /* JMImageView.swift in Sources */,
 				E87A39BE225CD79100953DDB /* Endpoint.swift in Sources */,
 				E87A39D5225CDFDA00953DDB /* Contact.swift in Sources */,
+				17B64825225FDE3600EB37BE /* ReceiptViewController.swift in Sources */,
 				E87A39E2225D01E900953DDB /* CustomSearchTextField.swift in Sources */,
 				1719D1B0225EEDEE00BCD5E4 /* CreditCardTableViewController.swift in Sources */,
 				1719D1B6225F016700BCD5E4 /* TextFieldError.swift in Sources */,

@@ -39,6 +39,11 @@ class ContactsViewController: UIViewController {
         self.setupNavigation(preferLarge: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.performSegue(withIdentifier: "presentReceipt", sender: nil)
+    }
+    
     // MARK: - Privates
     
     private func setup() {
