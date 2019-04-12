@@ -10,16 +10,19 @@ import UIKit
 
 class ContactsViewController: UIViewController {
     
-    // MARK: - Variables
+    // MARK: - Constants
     
     private let viewModel: ContactsViewModel
+    
+    // MARK: - Variables
+    
     var receipt: ReceiptViewModel?
     
     // MARK: - Outlets
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBarView: CustomSearchBarView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBarView: CustomSearchBarView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Init
     
@@ -32,13 +35,13 @@ class ContactsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setup()
+        self.setupSearchBar()
         self.loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupNavigation(preferLarge: true, bartintColor: UIColor(hex: "#1D1E20"))
+        self.setupNavigation(preferLarge: true, bartintColor: .backgroundDefault)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,9 +51,11 @@ class ContactsViewController: UIViewController {
     
     // MARK: - Privates
     
-    private func setup() {
+    private func setupSearchBar() {
         self.searchBarView.delegate = self
     }
+    
+    // MARK: - View Model
     
     private func loadData() {
         self.activityIndicator.startAnimating()
@@ -77,6 +82,8 @@ class ContactsViewController: UIViewController {
             self.performSegue(withIdentifier: "presentReceipt", sender: nil)
         }
     }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PrimingCardViewController, let contact = sender as? ContactViewModel {
@@ -116,13 +123,13 @@ extension ContactsViewController: UITableViewDataSource {
 }
 
 // MARK: - Table View Delegate
-
 extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showPrimingCardController", sender: viewModel.element(for: indexPath.row))
     }
 }
 
+// MARK: - Custom Search Bar Delegate
 extension ContactsViewController: CustomSearchBarDelegate {
     func customSearchDidChange(_ customSearch: CustomSearchBarView, text: String) {
         self.filter(text: text)

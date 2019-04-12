@@ -10,11 +10,17 @@ import Foundation
 
 class ReceiptViewModel {
     
+    // MARK: - Constants
+    
     private let model: TransactionReceipt
+    
+    // MARK: - Init
     
     init(_ model: TransactionReceipt) {
         self.model = model
     }
+    
+    // MARK: - Variables to view
     
     var contactImage: String? {
         return self.model.destUser?.image
@@ -31,14 +37,7 @@ class ReceiptViewModel {
     }
     
     var value: String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.locale = Locale.br
-        numberFormatter.currencySymbol = "R$"
-        numberFormatter.minimumFractionDigits = 2
-        numberFormatter.maximumFractionDigits = 2
-        
-        let number = NSNumber(floatLiteral: self.model.value ?? 0.0)
-        return "R$ " + (numberFormatter.string(from: number) ?? "0,00")
+        return (self.model.value ?? 0.0).toCurrency()
     }
     
     private var date: Date {

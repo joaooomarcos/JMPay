@@ -14,6 +14,10 @@ extension UIColor {
         return UIColor(hex: "#11C76F")
     }
     
+    static var backgroundDefault: UIColor {
+        return UIColor(hex: "#1D1E20")
+    }
+        
     convenience public init(hex: String) {
         
         let hexString: String = (hex as NSString).trimmingCharacters(in: .whitespacesAndNewlines)

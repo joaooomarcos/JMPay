@@ -44,4 +44,26 @@ extension UITextField {
             }
         }
     }
+    
+    func validateCardNumber() -> Bool {
+        // TODO: Regex de cartão
+        return self.validate(19)
+    }
+    
+    func validateCVV() -> Bool {
+        return self.validate(3)
+    }
+    
+    func validateExpiryDate() -> Bool {
+        // TODO: Separar componentes pra validar data
+        return self.validate(5)
+    }
+    
+    func validate(_ length: Int) -> Bool {
+        return (self.text ?? "").count >= length && !(self.text ?? "").isEmpty
+    }
+    
+    var isEmpty: Bool {
+        return (self.text ?? "").isEmpty
+    }
 }

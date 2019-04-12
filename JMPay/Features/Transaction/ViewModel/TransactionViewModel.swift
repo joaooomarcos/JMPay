@@ -10,13 +10,22 @@ import Foundation
 
 class TransactionViewModel {
     
-    private var model: Transaction
+    // MARK: - Constants
+    
     private let api: TransactionAPI
+    
+    // MARK: - Variables
+    
+    private var model: Transaction
+    
+    // MARK: - Init
     
     init(_ model: Transaction = Transaction(), api: TransactionAPI = TransactionAPI()) {
         self.model = model
         self.api = api
     }
+    
+    // MARK: - Variables to view
     
     var contact: ContactViewModel? {
         didSet {
@@ -35,9 +44,7 @@ class TransactionViewModel {
     
     var value: String? {
         didSet {
-            let numFormatter = NumberFormatter()
-            numFormatter.locale = Locale.br
-            self.doubleValue = Double(exactly: numFormatter.number(from: value ?? "") ?? 0.0) ?? 0.0
+            self.doubleValue = value?.toDouble()
         }
     }
     
@@ -52,7 +59,7 @@ class TransactionViewModel {
     
     var cardNumber: String? {
         get {
-            return "Mastercard \(model.cardNumber?.suffix(4) ?? "") • "
+            return "Mastercard \(model.cardNumber?.lastDigitsForCard() ?? "") • "
         }
         set {
             model.cardNumber = newValue?.onlyNumbers()
@@ -79,6 +86,8 @@ class TransactionViewModel {
         }
     }
     
+    // MARK: - Web Connection
+    
     func doTransfer(value: String, completion: @escaping (_ receipt: ReceiptViewModel?, _ error: String?) -> Void) {
         self.value = value
         self.api.doTransfer(transaction: model) { result in
@@ -86,7 +95,7 @@ class TransactionViewModel {
             case .success(let response):
                 if let receipt = response.receipt, let status = receipt.success, status {
                     let viewModel = ReceiptViewModel(receipt)
-                    viewModel.lastDigitsCard = "\(self.model.cardNumber?.suffix(4) ?? "")"
+                    viewModel.lastDigitsCard = self.model.cardNumber?.lastDigitsForCard() ?? ""
                     completion(viewModel, nil)
                     return
                 }

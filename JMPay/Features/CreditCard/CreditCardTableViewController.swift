@@ -11,20 +11,24 @@ import UIKit
 
 class CreditCardTableViewController: UITableViewController {
     
+    // MARK: - Constants
+    
+    private let bottomMargin: CGFloat = 12.0
+    
     // MARK: - Variables
     
     var viewModel: TransactionViewModel?
-    var buttonBottomConstraint: NSLayoutConstraint?
+    private var buttonBottomConstraint: NSLayoutConstraint?
+    private var mainButton: JMButton
     
-    var keyboardHeight: CGFloat = 0.0 {
+    private var keyboardHeight: CGFloat = 0.0 {
         didSet {
             self.updateButtonLayout()
         }
     }
     
-    var mainButton: JMButton
-    var oldValue = false
-    var allFieldsValid: Bool = false {
+    private var oldValue = false
+    private var allFieldsValid: Bool = false {
         didSet {
             if oldValue != allFieldsValid {
                 self.oldValue = allFieldsValid
@@ -59,31 +63,19 @@ class CreditCardTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Life Cycle
+    // MARK: - Init
     
     required init?(coder aDecoder: NSCoder) {
         self.mainButton = JMButton(title: "Salvar")
         super.init(coder: aDecoder)
-        
     }
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupTextFields()
-        
         self.setupTap()
-    }
-    
-    private func setupTap() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-        self.tableView.addGestureRecognizer(tap)
-    }
-    
-    private func setupKeyboard() {
-        let notification = NotificationCenter.default
-        notification.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notification.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,6 +100,33 @@ class CreditCardTableViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - Setups
+    
+    private func setupTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.tableView.addGestureRecognizer(tap)
+    }
+    
+    private func setupKeyboard() {
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setupTextFields() {
+        numberTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
+        nameTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
+        expireTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
+        cvvTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
+        
+        numberTextField.delegate = self
+        nameTextField.delegate = self
+        expireTextField.delegate = self
+        cvvTextField.delegate = self
+    }
+    
+    // MARK: - Selectors
+    
     @objc
     private func viewTapped() {
         self.view.endEditing(true)
@@ -125,39 +144,7 @@ class CreditCardTableViewController: UITableViewController {
         self.keyboardHeight = 0.0
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 8.0
-    }
-    
-    // MARK: - Setups
-    
-    private func setupTextFields() {
-        numberTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
-        nameTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
-        expireTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
-        cvvTextField.placeholderFont = UIFont.systemFont(ofSize: 16)
-        
-        numberTextField.delegate = self
-        nameTextField.delegate = self
-        expireTextField.delegate = self
-        cvvTextField.delegate = self
-    }
-    
-    private func addButton() {
-        self.mainButton.addIn(self.tableView)
-//        if self.mainButton == nil {
-//            self.mainButton = JMButton(title: "Salvar", addIn: self.tableView)
-            self.mainButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-            self.mainButton.alpha = 0.0
-//        }
-        if let superview = view.superview {
-            self.buttonBottomConstraint = mainButton.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -12)
-            self.buttonBottomConstraint?.isActive = true
-        }
-        
-        self.updateButtonLayout()
-        
-    }
+    // MARK: - Main Action
     
     @objc
     private func saveButtonTapped() {
@@ -171,14 +158,36 @@ class CreditCardTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "showPrimingCardController", sender: nil)
     }
     
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8.0
+    }
+    
+    // MARK: - Layout
+    
+    private func addButton() {
+        self.mainButton.addIn(self.tableView)
+        self.mainButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        self.mainButton.alpha = 0.0
+        if let superview = view.superview {
+            self.buttonBottomConstraint = mainButton.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -bottomMargin)
+            self.buttonBottomConstraint?.isActive = true
+        }
+        
+        self.updateButtonLayout()
+    }
+    
     private func updateButtonLayout() {
-            buttonBottomConstraint?.constant = -12 - keyboardHeight
+            buttonBottomConstraint?.constant = -bottomMargin - keyboardHeight
             
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
                 self.mainButton.alpha = self.allFieldsValid ? 1.0 : 0.0
             }
     }
+    
+    // MARK: - Data Verify
     
     private func verifyField(_ textField: MFTextField, showError: Bool = true) {
         guard let text = textField.text else { return }
@@ -202,28 +211,28 @@ class CreditCardTableViewController: UITableViewController {
             valid = false
         }
         
-        if (numberTextField.text ?? "").count < 19 && !(numberTextField.text ?? "").isEmpty {
+        if !numberTextField.validateCardNumber() && !numberTextField.isEmpty {
             if showError {
                 numberTextField.setError(TextFieldError.invalid("número inválido"), animated: true)
             }
             valid = false
         }
         
-        if (nameTextField.text ?? "").count < 3 && !(nameTextField.text ?? "").isEmpty {
+        if !nameTextField.validate(3) && !nameTextField.isEmpty {
             if showError {
                 nameTextField.setError(TextFieldError.invalid("nome inválido"), animated: true)
             }
             valid = false
         }
         
-        if (expireTextField.text ?? "").count != 5 && !(expireTextField.text ?? "").isEmpty {
+        if !expireTextField.validateExpiryDate() && !expireTextField.isEmpty {
             if showError {
                 expireTextField.setError(TextFieldError.invalid("data inválida"), animated: true)
             }
             valid = false
         }
         
-        if (cvvTextField.text ?? "").count < 3 && !(cvvTextField.text ?? "").isEmpty {
+        if !cvvTextField.validateCVV() && !cvvTextField.isEmpty {
             if showError {
                 cvvTextField.setError(TextFieldError.invalid("cvv inválido"), animated: true)
             }
@@ -233,6 +242,8 @@ class CreditCardTableViewController: UITableViewController {
         self.allFieldsValid = valid
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? TransferValueViewController {
             destination.viewModel = self.viewModel
@@ -240,6 +251,7 @@ class CreditCardTableViewController: UITableViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension CreditCardTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
@@ -262,11 +274,5 @@ extension CreditCardTableViewController: UITextFieldDelegate {
         if let mfTextField = textField as? MFTextField {
             self.verifyField(mfTextField)
         }
-    }
-}
-
-extension Optional where Wrapped == String {
-    var isNullOrEmpty: Bool {
-        return (self ?? "").isEmpty
     }
 }

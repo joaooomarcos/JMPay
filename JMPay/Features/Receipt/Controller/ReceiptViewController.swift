@@ -10,9 +10,15 @@ import UIKit
 
 class ReceiptViewController: UIViewController {
     
+    // MARK: - Constants
+    
+    private let minScrollToDismiss: CGFloat = 180.0
+    private let containerTopDistance: CGFloat = 92.0
+    
     // MARK: - Variables
     
     var viewModel: ReceiptViewModel?
+    private var initialTouchPoint = CGPoint(x: 0, y: 0)
     
     // MARK: - Outlets
 
@@ -45,14 +51,10 @@ class ReceiptViewController: UIViewController {
         self.animateShow()
     }
     
+    // MARK: - Setups
+    
     private func setupForAnimation() {
         self.containerView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
-    }
-    
-    private func animateShow() {
-        UIView.animate(withDuration: 0.3) {
-            self.containerView.transform = CGAffineTransform.identity
-        }
     }
     
     private func setupLayout() {
@@ -66,21 +68,30 @@ class ReceiptViewController: UIViewController {
         self.totalValueLabel.text = viewModel.value
     }
     
-    var initialTouchPoint = CGPoint(x: 0, y: 0)
+    // MARK: - Layout
+    
+    private func animateShow() {
+        UIView.animate(withDuration: 0.3) {
+            self.containerView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    // MARK: - Gesture Handler
     
     @objc
     private func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: self.view?.window)
         let size = self.containerView.frame.size
         
-        if sender.state == UIGestureRecognizer.State.began {
+        switch sender.state {
+        case .began:
             initialTouchPoint = touchPoint
-        } else if sender.state == UIGestureRecognizer.State.changed {
+        case .changed:
             if touchPoint.y - initialTouchPoint.y > 0 {
-                self.containerView.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y + 92.0, width: size.width, height: size.height)
+                self.containerView.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y + self.containerTopDistance, width: size.width, height: size.height)
             }
-        } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled {
-            if touchPoint.y - initialTouchPoint.y > 180 {
+        case .ended, .cancelled:
+            if touchPoint.y - initialTouchPoint.y > minScrollToDismiss {
                 UIView.animate(withDuration: 0.3, animations: {
                     self.containerView.frame = CGRect(x: 0, y: self.view.frame.height, width: size.width, height: size.height)
                 }, completion: { _ in
@@ -89,9 +100,11 @@ class ReceiptViewController: UIViewController {
             } else {
                 UIView.animate(withDuration: 0.3, animations: {
                     let size = self.containerView.frame.size
-                    self.containerView.frame = CGRect(x: 0, y: 92, width: size.width, height: size.height)
+                    self.containerView.frame = CGRect(x: 0, y: self.containerTopDistance, width: size.width, height: size.height)
                 })
             }
+        default:
+            break
         }
     }
 }

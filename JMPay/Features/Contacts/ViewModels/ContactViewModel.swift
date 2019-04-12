@@ -10,11 +10,17 @@ import Foundation
 
 class ContactViewModel {
     
+    // MARK: - Constants
+    
     private let model: Contact
+    
+    // MARK: - Init
     
     init(_ model: Contact) {
         self.model = model
     }
+    
+    // MARK: - Variables to view
     
     var id: Int {
         return model.id ?? 0

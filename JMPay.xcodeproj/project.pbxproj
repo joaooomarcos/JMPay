@@ -18,6 +18,10 @@
 		17B6482E225FEC6700EB37BE /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */; };
 		17B648302260035C00EB37BE /* TransactionReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6482F2260035C00EB37BE /* TransactionReceipt.swift */; };
 		17EAE983226041FC00FC4A07 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */; };
+		17EAE99222606CD700FC4A07 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE99122606CD700FC4A07 /* NumberFormatter+Extensions.swift */; };
+		17EAE99422606EB500FC4A07 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE99322606EB500FC4A07 /* Optional+Extensions.swift */; };
+		17EAE996226073D200FC4A07 /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE995226073D200FC4A07 /* Locale+Extensions.swift */; };
+		17EAE9982260743200FC4A07 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE9972260743200FC4A07 /* Double+Extensions.swift */; };
 		59BC76D12E934C9047613AE7 /* Pods_JMPayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63862815B3E4058D02692FE8 /* Pods_JMPayUITests.framework */; };
 		5B6AD49C65286F2CCE906485 /* Pods_JMPayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E0D222E824246CCA647F68 /* Pods_JMPayTests.framework */; };
 		E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A398D225CD21B00953DDB /* AppDelegate.swift */; };
@@ -82,6 +86,10 @@
 		17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		17B6482F2260035C00EB37BE /* TransactionReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionReceipt.swift; sourceTree = "<group>"; };
 		17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
+		17EAE99122606CD700FC4A07 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		17EAE99322606EB500FC4A07 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		17EAE995226073D200FC4A07 /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
+		17EAE9972260743200FC4A07 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		28E5292785F7EFD5CD920B95 /* Pods-JMPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPay.debug.xcconfig"; path = "Target Support Files/Pods-JMPay/Pods-JMPay.debug.xcconfig"; sourceTree = "<group>"; };
 		2A6BA5CA844E8BC4B528B5FB /* Pods-JMPayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.release.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3354785234E1090524D2E917 /* Pods_JMPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,8 +266,8 @@
 		17EAE98C2260690400FC4A07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				17B64829225FEA5600EB37BE /* TransactionResponse.swift */,
 				17B6482B225FEB3F00EB37BE /* Transaction.swift */,
+				17B64829225FEA5600EB37BE /* TransactionResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,11 +398,15 @@
 			isa = PBXGroup;
 			children = (
 				E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */,
+				17EAE9972260743200FC4A07 /* Double+Extensions.swift */,
 				E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */,
-				E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */,
-				E87A39E3225D044500953DDB /* UIColor+Extensions.swift */,
-				1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */,
+				17EAE995226073D200FC4A07 /* Locale+Extensions.swift */,
+				17EAE99122606CD700FC4A07 /* NumberFormatter+Extensions.swift */,
+				17EAE99322606EB500FC4A07 /* Optional+Extensions.swift */,
 				1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */,
+				E87A39E3225D044500953DDB /* UIColor+Extensions.swift */,
+				E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */,
+				1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */,
 				E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
@@ -417,8 +429,8 @@
 			children = (
 				1719D1B5225F016700BCD5E4 /* TextFieldError.swift */,
 				E87A39DB225CECBC00953DDB /* ReusableView.swift */,
-				E87A39DF225CF60100953DDB /* JMImageView.swift */,
 				E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */,
+				E87A39DF225CF60100953DDB /* JMImageView.swift */,
 				E87A39E5225D2CB100953DDB /* JMButton.swift */,
 			);
 			path = Components;
@@ -717,8 +729,12 @@
 				E87A39F1225FA51E00953DDB /* PrimingCardViewController.swift in Sources */,
 				E87A39D7225CE01B00953DDB /* ContactViewModel.swift in Sources */,
 				E87A39C4225CD8B000953DDB /* Result.swift in Sources */,
+				17EAE99422606EB500FC4A07 /* Optional+Extensions.swift in Sources */,
 				17B6482A225FEA5600EB37BE /* TransactionResponse.swift in Sources */,
 				E87A39C0225CD7B600953DDB /* HTTPMethod.swift in Sources */,
+				17EAE9982260743200FC4A07 /* Double+Extensions.swift in Sources */,
+				17EAE996226073D200FC4A07 /* Locale+Extensions.swift in Sources */,
+				17EAE99222606CD700FC4A07 /* NumberFormatter+Extensions.swift in Sources */,
 				E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */,
 				E87A39C9225CDB1500953DDB /* JSONDecoder+Extensions.swift in Sources */,
 				17B6482E225FEC6700EB37BE /* TransactionViewModel.swift in Sources */,
