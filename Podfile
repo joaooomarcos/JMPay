@@ -12,8 +12,9 @@ target 'JMPay' do
   pod 'AlamofireImage'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'AlamofireNetworkActivityLogger'
+  pod 'MaterialTextField'
   pod 'SwiftLint'
-
+  
   target 'JMPayTests' do
     inherit! :search_paths
   end

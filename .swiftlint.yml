@@ -5,28 +5,12 @@ force_cast:
 
 force_unwrapping:
   severity: error
-
-# cyclomatic_complexity:
-#   warning: 3
-#   error: 5
-
-# function_parameter_count:
-#   warning: 4
-#   error: 5
-
-# file_length:
-#   warning: 645
-#   error: 800
     
-# line_length:
-#   warning: 600
-#   error: 635
-#   ignores_comments: true
-#   ignores_function_declarations: true
-
-# type_body_length:
-#   warning: 440
-#   error: 520
+line_length:
+  warning: 175
+  error: 200
+  ignores_comments: true
+  ignores_function_declarations: true
 
 whitelist_rules:
     - block_based_kvo
@@ -39,7 +23,6 @@ whitelist_rules:
     - collection_alignment
     - colon
     - comma
-    - compiler_protocol_init
     - conditional_binding_cascade
     - contains_over_first_not_nil
     - control_statement
@@ -75,7 +58,6 @@ whitelist_rules:
     - multiline_parameters
     - multiple_closures_with_trailing_closure
     - nesting
-    - notification_center_detachment
     - operator_whitespace
     - opening_brace
     - overridden_super_call

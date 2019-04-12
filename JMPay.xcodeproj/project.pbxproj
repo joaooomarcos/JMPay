@@ -7,16 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00135D6838BF8C558C8DF173 /* Pods_JMPayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3441C1E14043D45855FA71AE /* Pods_JMPayTests.framework */; };
-		1235697FE79724949A19D3FE /* Pods_JMPayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D754AC1708BF9BE9D85C8894 /* Pods_JMPayUITests.framework */; };
-		48F2D3AC73BF3E5FC83364CE /* Pods_JMPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B9D9809520EA0D5A8273 /* Pods_JMPay.framework */; };
+		1719D1B0225EEDEE00BCD5E4 /* CreditCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1AF225EEDEE00BCD5E4 /* CreditCardTableViewController.swift */; };
+		1719D1B2225EF70800BCD5E4 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */; };
+		1719D1B4225EF72F00BCD5E4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */; };
+		1719D1B6225F016700BCD5E4 /* TextFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1B5225F016700BCD5E4 /* TextFieldError.swift */; };
+		17B64825225FDE3600EB37BE /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B64824225FDE3600EB37BE /* ReceiptViewController.swift */; };
+		17B64827225FE96C00EB37BE /* TransactionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B64826225FE96C00EB37BE /* TransactionAPI.swift */; };
+		17B6482A225FEA5600EB37BE /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B64829225FEA5600EB37BE /* TransactionResponse.swift */; };
+		17B6482C225FEB3F00EB37BE /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6482B225FEB3F00EB37BE /* Transaction.swift */; };
+		17B6482E225FEC6700EB37BE /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */; };
+		17B648302260035C00EB37BE /* TransactionReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B6482F2260035C00EB37BE /* TransactionReceipt.swift */; };
+		17EAE983226041FC00FC4A07 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */; };
+		17EAE99222606CD700FC4A07 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE99122606CD700FC4A07 /* NumberFormatter+Extensions.swift */; };
+		17EAE99422606EB500FC4A07 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE99322606EB500FC4A07 /* Optional+Extensions.swift */; };
+		17EAE996226073D200FC4A07 /* Locale+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE995226073D200FC4A07 /* Locale+Extensions.swift */; };
+		17EAE9982260743200FC4A07 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EAE9972260743200FC4A07 /* Double+Extensions.swift */; };
+		59BC76D12E934C9047613AE7 /* Pods_JMPayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63862815B3E4058D02692FE8 /* Pods_JMPayUITests.framework */; };
+		5B6AD49C65286F2CCE906485 /* Pods_JMPayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E0D222E824246CCA647F68 /* Pods_JMPayTests.framework */; };
 		E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A398D225CD21B00953DDB /* AppDelegate.swift */; };
-		E87A3990225CD21B00953DDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A398F225CD21B00953DDB /* ViewController.swift */; };
 		E87A3993225CD21B00953DDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87A3991225CD21B00953DDB /* Main.storyboard */; };
 		E87A3995225CD21F00953DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E87A3994225CD21F00953DDB /* Assets.xcassets */; };
 		E87A3998225CD21F00953DDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87A3996225CD21F00953DDB /* LaunchScreen.storyboard */; };
 		E87A39A3225CD21F00953DDB /* JMPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39A2225CD21F00953DDB /* JMPayTests.swift */; };
 		E87A39AE225CD21F00953DDB /* JMPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39AD225CD21F00953DDB /* JMPayUITests.swift */; };
+		E87A39BC225CD77000953DDB /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39BB225CD77000953DDB /* RequestManager.swift */; };
+		E87A39BE225CD79100953DDB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39BD225CD79100953DDB /* Endpoint.swift */; };
+		E87A39C0225CD7B600953DDB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39BF225CD7B600953DDB /* HTTPMethod.swift */; };
+		E87A39C2225CD88C00953DDB /* WebConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C1225CD88C00953DDB /* WebConnection.swift */; };
+		E87A39C4225CD8B000953DDB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C3225CD8B000953DDB /* Result.swift */; };
+		E87A39C7225CDABA00953DDB /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */; };
+		E87A39C9225CDB1500953DDB /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */; };
+		E87A39CB225CDB6C00953DDB /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */; };
+		E87A39CD225CDC8C00953DDB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39CC225CDC8C00953DDB /* APIError.swift */; };
+		E87A39D1225CDF7A00953DDB /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39D0225CDF7A00953DDB /* ContactsViewController.swift */; };
+		E87A39D3225CDFC200953DDB /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39D2225CDFC200953DDB /* ContactsViewModel.swift */; };
+		E87A39D5225CDFDA00953DDB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39D4225CDFDA00953DDB /* Contact.swift */; };
+		E87A39D7225CE01B00953DDB /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39D6225CE01B00953DDB /* ContactViewModel.swift */; };
+		E87A39DA225CE9C800953DDB /* ContactsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39D9225CE9C800953DDB /* ContactsAPI.swift */; };
+		E87A39DC225CECBC00953DDB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39DB225CECBC00953DDB /* ReusableView.swift */; };
+		E87A39DE225CEFF200953DDB /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */; };
+		E87A39E0225CF60100953DDB /* JMImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39DF225CF60100953DDB /* JMImageView.swift */; };
+		E87A39E2225D01E900953DDB /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */; };
+		E87A39E4225D044500953DDB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E3225D044500953DDB /* UIColor+Extensions.swift */; };
+		E87A39E6225D2CB100953DDB /* JMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39E5225D2CB100953DDB /* JMButton.swift */; };
+		E87A39EC225F9C8D00953DDB /* TransferValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39EB225F9C8D00953DDB /* TransferValueViewController.swift */; };
+		E87A39EE225F9F8F00953DDB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */; };
+		E87A39F1225FA51E00953DDB /* PrimingCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A39F0225FA51E00953DDB /* PrimingCardViewController.swift */; };
+		FDB485F8E07F3F4FB8E90500 /* Pods_JMPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3354785234E1090524D2E917 /* Pods_JMPay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,17 +74,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		314EE83DCBDC63689422D461 /* Pods-JMPayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayTests.release.xcconfig"; path = "Target Support Files/Pods-JMPayTests/Pods-JMPayTests.release.xcconfig"; sourceTree = "<group>"; };
-		3441C1E14043D45855FA71AE /* Pods_JMPayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5435B9D9809520EA0D5A8273 /* Pods_JMPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61CE3B7CEA5BD229D6598B60 /* Pods-JMPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPay.debug.xcconfig"; path = "Target Support Files/Pods-JMPay/Pods-JMPay.debug.xcconfig"; sourceTree = "<group>"; };
-		8DB03E925A2CA02F85911580 /* Pods-JMPayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayTests.debug.xcconfig"; path = "Target Support Files/Pods-JMPayTests/Pods-JMPayTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D4191D424C6870018602837C /* Pods-JMPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPay.release.xcconfig"; path = "Target Support Files/Pods-JMPay/Pods-JMPay.release.xcconfig"; sourceTree = "<group>"; };
-		D754AC1708BF9BE9D85C8894 /* Pods_JMPayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1E9444113A2F73A60D3D7B6 /* Pods-JMPayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.release.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		13199ECF5465C20E730CD9E8 /* Pods-JMPayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.debug.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1719D1AF225EEDEE00BCD5E4 /* CreditCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewController.swift; sourceTree = "<group>"; };
+		1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		1719D1B5225F016700BCD5E4 /* TextFieldError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldError.swift; sourceTree = "<group>"; };
+		17B64824225FDE3600EB37BE /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		17B64826225FE96C00EB37BE /* TransactionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAPI.swift; sourceTree = "<group>"; };
+		17B64829225FEA5600EB37BE /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		17B6482B225FEB3F00EB37BE /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		17B6482F2260035C00EB37BE /* TransactionReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionReceipt.swift; sourceTree = "<group>"; };
+		17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
+		17EAE99122606CD700FC4A07 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		17EAE99322606EB500FC4A07 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		17EAE995226073D200FC4A07 /* Locale+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extensions.swift"; sourceTree = "<group>"; };
+		17EAE9972260743200FC4A07 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		28E5292785F7EFD5CD920B95 /* Pods-JMPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPay.debug.xcconfig"; path = "Target Support Files/Pods-JMPay/Pods-JMPay.debug.xcconfig"; sourceTree = "<group>"; };
+		2A6BA5CA844E8BC4B528B5FB /* Pods-JMPayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.release.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3354785234E1090524D2E917 /* Pods_JMPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40F773BC97AF788E3379E358 /* Pods-JMPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPay.release.xcconfig"; path = "Target Support Files/Pods-JMPay/Pods-JMPay.release.xcconfig"; sourceTree = "<group>"; };
+		63862815B3E4058D02692FE8 /* Pods_JMPayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6E0D222E824246CCA647F68 /* Pods_JMPayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JMPayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B5A2650A797F0F804B9859 /* Pods-JMPayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayTests.debug.xcconfig"; path = "Target Support Files/Pods-JMPayTests/Pods-JMPayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D25022B4FC6296F74F8E02C0 /* Pods-JMPayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayTests.release.xcconfig"; path = "Target Support Files/Pods-JMPayTests/Pods-JMPayTests.release.xcconfig"; sourceTree = "<group>"; };
 		E87A398A225CD21B00953DDB /* JMPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87A398D225CD21B00953DDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E87A398F225CD21B00953DDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E87A3992225CD21B00953DDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E87A3994225CD21F00953DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E87A3997225CD21F00953DDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +110,29 @@
 		E87A39A9225CD21F00953DDB /* JMPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87A39AD225CD21F00953DDB /* JMPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMPayUITests.swift; sourceTree = "<group>"; };
 		E87A39AF225CD21F00953DDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDD792B8C26B07AB7D58BC7A /* Pods-JMPayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMPayUITests.debug.xcconfig"; path = "Target Support Files/Pods-JMPayUITests/Pods-JMPayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E87A39BB225CD77000953DDB /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		E87A39BD225CD79100953DDB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E87A39BF225CD7B600953DDB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E87A39C1225CD88C00953DDB /* WebConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConnection.swift; sourceTree = "<group>"; };
+		E87A39C3225CD8B000953DDB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39CC225CDC8C00953DDB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E87A39D0225CDF7A00953DDB /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		E87A39D2225CDFC200953DDB /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		E87A39D4225CDFDA00953DDB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		E87A39D6225CE01B00953DDB /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		E87A39D9225CE9C800953DDB /* ContactsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAPI.swift; sourceTree = "<group>"; };
+		E87A39DB225CECBC00953DDB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		E87A39DF225CF60100953DDB /* JMImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMImageView.swift; sourceTree = "<group>"; };
+		E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
+		E87A39E3225D044500953DDB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39E5225D2CB100953DDB /* JMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JMButton.swift; sourceTree = "<group>"; };
+		E87A39EB225F9C8D00953DDB /* TransferValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferValueViewController.swift; sourceTree = "<group>"; };
+		E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E87A39F0225FA51E00953DDB /* PrimingCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimingCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F2D3AC73BF3E5FC83364CE /* Pods_JMPay.framework in Frameworks */,
+				FDB485F8E07F3F4FB8E90500 /* Pods_JMPay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00135D6838BF8C558C8DF173 /* Pods_JMPayTests.framework in Frameworks */,
+				5B6AD49C65286F2CCE906485 /* Pods_JMPayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,34 +156,174 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1235697FE79724949A19D3FE /* Pods_JMPayUITests.framework in Frameworks */,
+				59BC76D12E934C9047613AE7 /* Pods_JMPayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA4EE026502C83A445FE7144 /* Frameworks */ = {
+		1719D1AC225EEDA000BCD5E4 /* CreditCard */ = {
 			isa = PBXGroup;
 			children = (
-				5435B9D9809520EA0D5A8273 /* Pods_JMPay.framework */,
-				3441C1E14043D45855FA71AE /* Pods_JMPayTests.framework */,
-				D754AC1708BF9BE9D85C8894 /* Pods_JMPayUITests.framework */,
+				1719D1AF225EEDEE00BCD5E4 /* CreditCardTableViewController.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		17B64823225FDE1400EB37BE /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				17EAE98E2260693000FC4A07 /* Model */,
+				17EAE98F2260693600FC4A07 /* ViewModel */,
+				17EAE9902260693C00FC4A07 /* Controller */,
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
+		17B64828225FEA3200EB37BE /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				17EAE98B226068F800FC4A07 /* API */,
+				17EAE98D2260690A00FC4A07 /* ViewModel */,
+				17EAE98C2260690400FC4A07 /* Models */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		17EAE984226067C600FC4A07 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E87A3991225CD21B00953DDB /* Main.storyboard */,
+				E87A39CF225CDF5400953DDB /* Contacts */,
+				17B64828225FEA3200EB37BE /* Transaction */,
+				E87A39EF225FA4E400953DDB /* PrimingCard */,
+				1719D1AC225EEDA000BCD5E4 /* CreditCard */,
+				E87A39EA225F9C7800953DDB /* TransferValue */,
+				17B64823225FDE1400EB37BE /* Receipt */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		17EAE9852260680E00FC4A07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E87A3994225CD21F00953DDB /* Assets.xcassets */,
+				E87A3996225CD21F00953DDB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		17EAE9862260688F00FC4A07 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D9225CE9C800953DDB /* ContactsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		17EAE9872260689900FC4A07 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D6225CE01B00953DDB /* ContactViewModel.swift */,
+				E87A39D2225CDFC200953DDB /* ContactsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		17EAE988226068B500FC4A07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D4225CDFDA00953DDB /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17EAE989226068BF00FC4A07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D0225CDF7A00953DDB /* ContactsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17EAE98A226068C600FC4A07 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		17EAE98B226068F800FC4A07 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				17B64826225FE96C00EB37BE /* TransactionAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		17EAE98C2260690400FC4A07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17B6482B225FEB3F00EB37BE /* Transaction.swift */,
+				17B64829225FEA5600EB37BE /* TransactionResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17EAE98D2260690A00FC4A07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17EAE98E2260693000FC4A07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17B6482F2260035C00EB37BE /* TransactionReceipt.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17EAE98F2260693600FC4A07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17EAE9902260693C00FC4A07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17B64824225FDE3600EB37BE /* ReceiptViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DC6A1BD169DA2FE38FDB738 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3354785234E1090524D2E917 /* Pods_JMPay.framework */,
+				A6E0D222E824246CCA647F68 /* Pods_JMPayTests.framework */,
+				63862815B3E4058D02692FE8 /* Pods_JMPayUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DA5C19209944FFA787B888F3 /* Pods */ = {
+		B4B81C54C2C74976BFC571D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				61CE3B7CEA5BD229D6598B60 /* Pods-JMPay.debug.xcconfig */,
-				D4191D424C6870018602837C /* Pods-JMPay.release.xcconfig */,
-				8DB03E925A2CA02F85911580 /* Pods-JMPayTests.debug.xcconfig */,
-				314EE83DCBDC63689422D461 /* Pods-JMPayTests.release.xcconfig */,
-				FDD792B8C26B07AB7D58BC7A /* Pods-JMPayUITests.debug.xcconfig */,
-				E1E9444113A2F73A60D3D7B6 /* Pods-JMPayUITests.release.xcconfig */,
+				28E5292785F7EFD5CD920B95 /* Pods-JMPay.debug.xcconfig */,
+				40F773BC97AF788E3379E358 /* Pods-JMPay.release.xcconfig */,
+				C9B5A2650A797F0F804B9859 /* Pods-JMPayTests.debug.xcconfig */,
+				D25022B4FC6296F74F8E02C0 /* Pods-JMPayTests.release.xcconfig */,
+				13199ECF5465C20E730CD9E8 /* Pods-JMPayUITests.debug.xcconfig */,
+				2A6BA5CA844E8BC4B528B5FB /* Pods-JMPayUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,8 +334,8 @@
 				E87A39A1225CD21F00953DDB /* JMPayTests */,
 				E87A39AC225CD21F00953DDB /* JMPayUITests */,
 				E87A398B225CD21B00953DDB /* Products */,
-				DA5C19209944FFA787B888F3 /* Pods */,
-				AA4EE026502C83A445FE7144 /* Frameworks */,
+				B4B81C54C2C74976BFC571D2 /* Pods */,
+				8DC6A1BD169DA2FE38FDB738 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,10 +353,11 @@
 			isa = PBXGroup;
 			children = (
 				E87A398D225CD21B00953DDB /* AppDelegate.swift */,
-				E87A398F225CD21B00953DDB /* ViewController.swift */,
-				E87A3991225CD21B00953DDB /* Main.storyboard */,
-				E87A3994225CD21F00953DDB /* Assets.xcassets */,
-				E87A3996225CD21F00953DDB /* LaunchScreen.storyboard */,
+				17EAE984226067C600FC4A07 /* Features */,
+				E87A39E9225F9C6600953DDB /* Components */,
+				E87A39CE225CDEA600953DDB /* Extensions */,
+				E87A39C5225CDA0700953DDB /* WebConnection */,
+				17EAE9852260680E00FC4A07 /* Resources */,
 				E87A3999225CD21F00953DDB /* Info.plist */,
 			);
 			path = JMPay;
@@ -166,6 +381,77 @@
 			path = JMPayUITests;
 			sourceTree = "<group>";
 		};
+		E87A39C5225CDA0700953DDB /* WebConnection */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39BB225CD77000953DDB /* RequestManager.swift */,
+				E87A39BD225CD79100953DDB /* Endpoint.swift */,
+				E87A39BF225CD7B600953DDB /* HTTPMethod.swift */,
+				E87A39C1225CD88C00953DDB /* WebConnection.swift */,
+				E87A39C3225CD8B000953DDB /* Result.swift */,
+				E87A39CC225CDC8C00953DDB /* APIError.swift */,
+			);
+			path = WebConnection;
+			sourceTree = "<group>";
+		};
+		E87A39CE225CDEA600953DDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39C6225CDABA00953DDB /* Dictionary+Extensions.swift */,
+				17EAE9972260743200FC4A07 /* Double+Extensions.swift */,
+				E87A39C8225CDB1500953DDB /* JSONDecoder+Extensions.swift */,
+				17EAE995226073D200FC4A07 /* Locale+Extensions.swift */,
+				17EAE99122606CD700FC4A07 /* NumberFormatter+Extensions.swift */,
+				17EAE99322606EB500FC4A07 /* Optional+Extensions.swift */,
+				1719D1B3225EF72F00BCD5E4 /* String+Extensions.swift */,
+				E87A39E3225D044500953DDB /* UIColor+Extensions.swift */,
+				E87A39CA225CDB6C00953DDB /* UIImageView+Extensions.swift */,
+				1719D1B1225EF70800BCD5E4 /* UITextField+Extensions.swift */,
+				E87A39ED225F9F8F00953DDB /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E87A39CF225CDF5400953DDB /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				17EAE9862260688F00FC4A07 /* API */,
+				17EAE988226068B500FC4A07 /* Model */,
+				17EAE9872260689900FC4A07 /* ViewModels */,
+				17EAE989226068BF00FC4A07 /* Controller */,
+				17EAE98A226068C600FC4A07 /* Cells */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		E87A39E9225F9C6600953DDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1719D1B5225F016700BCD5E4 /* TextFieldError.swift */,
+				E87A39DB225CECBC00953DDB /* ReusableView.swift */,
+				E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */,
+				E87A39DF225CF60100953DDB /* JMImageView.swift */,
+				E87A39E5225D2CB100953DDB /* JMButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E87A39EA225F9C7800953DDB /* TransferValue */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39EB225F9C8D00953DDB /* TransferValueViewController.swift */,
+			);
+			path = TransferValue;
+			sourceTree = "<group>";
+		};
+		E87A39EF225FA4E400953DDB /* PrimingCard */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39F0225FA51E00953DDB /* PrimingCardViewController.swift */,
+			);
+			path = PrimingCard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,11 +459,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E87A39B2225CD21F00953DDB /* Build configuration list for PBXNativeTarget "JMPay" */;
 			buildPhases = (
-				7AFA0135E9FF7918B08DAE84 /* [CP] Check Pods Manifest.lock */,
+				4B9B480B8658FC1499ECF808 /* [CP] Check Pods Manifest.lock */,
+				17B648312260090A00EB37BE /* SwiftLint */,
 				E87A3986225CD21B00953DDB /* Sources */,
 				E87A3987225CD21B00953DDB /* Frameworks */,
 				E87A3988225CD21B00953DDB /* Resources */,
-				4472FC85B124ADAA35618A14 /* [CP] Embed Pods Frameworks */,
+				EED7070B17EB40C93556037F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,7 +479,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E87A39B5225CD21F00953DDB /* Build configuration list for PBXNativeTarget "JMPayTests" */;
 			buildPhases = (
-				94B7731B257D02BCF5987083 /* [CP] Check Pods Manifest.lock */,
+				5C08CB30B35483BA2ABD70B9 /* [CP] Check Pods Manifest.lock */,
 				E87A399A225CD21F00953DDB /* Sources */,
 				E87A399B225CD21F00953DDB /* Frameworks */,
 				E87A399C225CD21F00953DDB /* Resources */,
@@ -211,7 +498,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E87A39B8225CD21F00953DDB /* Build configuration list for PBXNativeTarget "JMPayUITests" */;
 			buildPhases = (
-				3A22F5877829686D03527445 /* [CP] Check Pods Manifest.lock */,
+				69721344496AE6C6CBD30B90 /* [CP] Check Pods Manifest.lock */,
 				E87A39A5225CD21F00953DDB /* Sources */,
 				E87A39A6225CD21F00953DDB /* Frameworks */,
 				E87A39A7225CD21F00953DDB /* Resources */,
@@ -297,7 +584,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3A22F5877829686D03527445 /* [CP] Check Pods Manifest.lock */ = {
+		17B648312260090A00EB37BE /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,49 +592,17 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JMPayUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		4472FC85B124ADAA35618A14 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JMPay/Pods-JMPay-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JMPay/Pods-JMPay-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AFA0135E9FF7918B08DAE84 /* [CP] Check Pods Manifest.lock */ = {
+		4B9B480B8658FC1499ECF808 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,7 +624,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		94B7731B257D02BCF5987083 /* [CP] Check Pods Manifest.lock */ = {
+		5C08CB30B35483BA2ABD70B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,6 +646,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		69721344496AE6C6CBD30B90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JMPayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED7070B17EB40C93556037F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JMPay/Pods-JMPay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialTextField/MaterialTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JMPay/Pods-JMPay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -398,8 +705,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E87A3990225CD21B00953DDB /* ViewController.swift in Sources */,
+				1719D1B2225EF70800BCD5E4 /* UITextField+Extensions.swift in Sources */,
+				E87A39CB225CDB6C00953DDB /* UIImageView+Extensions.swift in Sources */,
+				E87A39DC225CECBC00953DDB /* ReusableView.swift in Sources */,
+				E87A39E6225D2CB100953DDB /* JMButton.swift in Sources */,
+				1719D1B4225EF72F00BCD5E4 /* String+Extensions.swift in Sources */,
+				E87A39C2225CD88C00953DDB /* WebConnection.swift in Sources */,
+				E87A39D1225CDF7A00953DDB /* ContactsViewController.swift in Sources */,
+				E87A39EC225F9C8D00953DDB /* TransferValueViewController.swift in Sources */,
+				17EAE983226041FC00FC4A07 /* ReceiptViewModel.swift in Sources */,
+				E87A39BC225CD77000953DDB /* RequestManager.swift in Sources */,
+				E87A39DE225CEFF200953DDB /* ContactTableViewCell.swift in Sources */,
+				E87A39DA225CE9C800953DDB /* ContactsAPI.swift in Sources */,
+				E87A39E0225CF60100953DDB /* JMImageView.swift in Sources */,
+				E87A39BE225CD79100953DDB /* Endpoint.swift in Sources */,
+				E87A39D5225CDFDA00953DDB /* Contact.swift in Sources */,
+				17B64825225FDE3600EB37BE /* ReceiptViewController.swift in Sources */,
+				17B648302260035C00EB37BE /* TransactionReceipt.swift in Sources */,
+				E87A39E2225D01E900953DDB /* CustomSearchTextField.swift in Sources */,
+				1719D1B0225EEDEE00BCD5E4 /* CreditCardTableViewController.swift in Sources */,
+				1719D1B6225F016700BCD5E4 /* TextFieldError.swift in Sources */,
+				17B6482C225FEB3F00EB37BE /* Transaction.swift in Sources */,
+				E87A39F1225FA51E00953DDB /* PrimingCardViewController.swift in Sources */,
+				E87A39D7225CE01B00953DDB /* ContactViewModel.swift in Sources */,
+				E87A39C4225CD8B000953DDB /* Result.swift in Sources */,
+				17EAE99422606EB500FC4A07 /* Optional+Extensions.swift in Sources */,
+				17B6482A225FEA5600EB37BE /* TransactionResponse.swift in Sources */,
+				E87A39C0225CD7B600953DDB /* HTTPMethod.swift in Sources */,
+				17EAE9982260743200FC4A07 /* Double+Extensions.swift in Sources */,
+				17EAE996226073D200FC4A07 /* Locale+Extensions.swift in Sources */,
+				17EAE99222606CD700FC4A07 /* NumberFormatter+Extensions.swift in Sources */,
 				E87A398E225CD21B00953DDB /* AppDelegate.swift in Sources */,
+				E87A39C9225CDB1500953DDB /* JSONDecoder+Extensions.swift in Sources */,
+				17B6482E225FEC6700EB37BE /* TransactionViewModel.swift in Sources */,
+				E87A39EE225F9F8F00953DDB /* UIViewController+Extensions.swift in Sources */,
+				E87A39C7225CDABA00953DDB /* Dictionary+Extensions.swift in Sources */,
+				E87A39D3225CDFC200953DDB /* ContactsViewModel.swift in Sources */,
+				E87A39CD225CDC8C00953DDB /* APIError.swift in Sources */,
+				E87A39E4225D044500953DDB /* UIColor+Extensions.swift in Sources */,
+				17B64827225FE96C00EB37BE /* TransactionAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,12 +916,13 @@
 		};
 		E87A39B3225CD21F00953DDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61CE3B7CEA5BD229D6598B60 /* Pods-JMPay.debug.xcconfig */;
+			baseConfigurationReference = 28E5292785F7EFD5CD920B95 /* Pods-JMPay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGZ4VASTMS;
 				INFOPLIST_FILE = JMPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,18 +930,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JM.JMPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E87A39B4225CD21F00953DDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4191D424C6870018602837C /* Pods-JMPay.release.xcconfig */;
+			baseConfigurationReference = 40F773BC97AF788E3379E358 /* Pods-JMPay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGZ4VASTMS;
 				INFOPLIST_FILE = JMPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,13 +950,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JM.JMPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		E87A39B6225CD21F00953DDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DB03E925A2CA02F85911580 /* Pods-JMPayTests.debug.xcconfig */;
+			baseConfigurationReference = C9B5A2650A797F0F804B9859 /* Pods-JMPayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -632,7 +978,7 @@
 		};
 		E87A39B7225CD21F00953DDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 314EE83DCBDC63689422D461 /* Pods-JMPayTests.release.xcconfig */;
+			baseConfigurationReference = D25022B4FC6296F74F8E02C0 /* Pods-JMPayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -654,7 +1000,7 @@
 		};
 		E87A39B9225CD21F00953DDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDD792B8C26B07AB7D58BC7A /* Pods-JMPayUITests.debug.xcconfig */;
+			baseConfigurationReference = 13199ECF5465C20E730CD9E8 /* Pods-JMPayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -675,7 +1021,7 @@
 		};
 		E87A39BA225CD21F00953DDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1E9444113A2F73A60D3D7B6 /* Pods-JMPayUITests.release.xcconfig */;
+			baseConfigurationReference = 2A6BA5CA844E8BC4B528B5FB /* Pods-JMPayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
