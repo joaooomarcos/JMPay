@@ -159,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				1719D1AF225EEDEE00BCD5E4 /* CreditCardTableViewController.swift */,
-				1719D1B5225F016700BCD5E4 /* TextFieldError.swift */,
 			);
 			path = CreditCard;
 			sourceTree = "<group>";
@@ -167,8 +166,9 @@
 		17B64823225FDE1400EB37BE /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
-				17B64824225FDE3600EB37BE /* ReceiptViewController.swift */,
-				17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */,
+				17EAE98E2260693000FC4A07 /* Model */,
+				17EAE98F2260693600FC4A07 /* ViewModel */,
+				17EAE9902260693C00FC4A07 /* Controller */,
 			);
 			path = Receipt;
 			sourceTree = "<group>";
@@ -176,11 +176,9 @@
 		17B64828225FEA3200EB37BE /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				17B64826225FE96C00EB37BE /* TransactionAPI.swift */,
-				17B64829225FEA5600EB37BE /* TransactionResponse.swift */,
-				17B6482B225FEB3F00EB37BE /* Transaction.swift */,
-				17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */,
-				17B6482F2260035C00EB37BE /* TransactionReceipt.swift */,
+				17EAE98B226068F800FC4A07 /* API */,
+				17EAE98D2260690A00FC4A07 /* ViewModel */,
+				17EAE98C2260690400FC4A07 /* Models */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -190,10 +188,10 @@
 			children = (
 				E87A3991225CD21B00953DDB /* Main.storyboard */,
 				E87A39CF225CDF5400953DDB /* Contacts */,
+				17B64828225FEA3200EB37BE /* Transaction */,
 				E87A39EF225FA4E400953DDB /* PrimingCard */,
 				1719D1AC225EEDA000BCD5E4 /* CreditCard */,
 				E87A39EA225F9C7800953DDB /* TransferValue */,
-				17B64828225FEA3200EB37BE /* Transaction */,
 				17B64823225FDE1400EB37BE /* Receipt */,
 			);
 			path = Features;
@@ -206,6 +204,96 @@
 				E87A3996225CD21F00953DDB /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		17EAE9862260688F00FC4A07 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D9225CE9C800953DDB /* ContactsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		17EAE9872260689900FC4A07 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D6225CE01B00953DDB /* ContactViewModel.swift */,
+				E87A39D2225CDFC200953DDB /* ContactsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		17EAE988226068B500FC4A07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D4225CDFDA00953DDB /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17EAE989226068BF00FC4A07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39D0225CDF7A00953DDB /* ContactsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17EAE98A226068C600FC4A07 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		17EAE98B226068F800FC4A07 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				17B64826225FE96C00EB37BE /* TransactionAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		17EAE98C2260690400FC4A07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17B64829225FEA5600EB37BE /* TransactionResponse.swift */,
+				17B6482B225FEB3F00EB37BE /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17EAE98D2260690A00FC4A07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17B6482D225FEC6700EB37BE /* TransactionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17EAE98E2260693000FC4A07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17B6482F2260035C00EB37BE /* TransactionReceipt.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17EAE98F2260693600FC4A07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17EAE982226041FC00FC4A07 /* ReceiptViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17EAE9902260693C00FC4A07 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17B64824225FDE3600EB37BE /* ReceiptViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		8DC6A1BD169DA2FE38FDB738 /* Frameworks */ = {
@@ -315,12 +403,11 @@
 		E87A39CF225CDF5400953DDB /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				E87A39D0225CDF7A00953DDB /* ContactsViewController.swift */,
-				E87A39D2225CDFC200953DDB /* ContactsViewModel.swift */,
-				E87A39D4225CDFDA00953DDB /* Contact.swift */,
-				E87A39D6225CE01B00953DDB /* ContactViewModel.swift */,
-				E87A39D9225CE9C800953DDB /* ContactsAPI.swift */,
-				E87A39DD225CEFF200953DDB /* ContactTableViewCell.swift */,
+				17EAE9862260688F00FC4A07 /* API */,
+				17EAE988226068B500FC4A07 /* Model */,
+				17EAE9872260689900FC4A07 /* ViewModels */,
+				17EAE989226068BF00FC4A07 /* Controller */,
+				17EAE98A226068C600FC4A07 /* Cells */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -328,6 +415,7 @@
 		E87A39E9225F9C6600953DDB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1719D1B5225F016700BCD5E4 /* TextFieldError.swift */,
 				E87A39DB225CECBC00953DDB /* ReusableView.swift */,
 				E87A39DF225CF60100953DDB /* JMImageView.swift */,
 				E87A39E1225D01E900953DDB /* CustomSearchTextField.swift */,

@@ -93,7 +93,7 @@ class ContactsViewController: UIViewController {
 extension UITableView {
     func reloadData(animated: Bool = false) {
         if animated {
-            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {self.reloadData()}, completion: nil)
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: { self.reloadData() }, completion: nil)
         } else {
             self.reloadData()
         }

@@ -23,7 +23,6 @@ whitelist_rules:
     - collection_alignment
     - colon
     - comma
-    - compiler_protocol_init
     - conditional_binding_cascade
     - contains_over_first_not_nil
     - control_statement
@@ -59,7 +58,6 @@ whitelist_rules:
     - multiline_parameters
     - multiple_closures_with_trailing_closure
     - nesting
-    - notification_center_detachment
     - operator_whitespace
     - opening_brace
     - overridden_super_call
