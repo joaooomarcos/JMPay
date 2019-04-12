@@ -41,7 +41,7 @@ class CreditCardTableViewController: UITableViewController {
         case numberTextField:
             numberTextField.mask("**** **** **** ****")
         case expireTextField:
-            expireTextField.mask("**/****")
+            expireTextField.mask("**/**")
         case cvvTextField:
             cvvTextField.mask("***")
         default:
@@ -122,14 +122,18 @@ class CreditCardTableViewController: UITableViewController {
     }
     
     private func addButton() {
-        self.mainButton = JMButton(title: "Salvar", addIn: self.tableView)
-        self.mainButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-        self.mainButton?.alpha = 0.0
+        if self.mainButton == nil {
+            self.mainButton = JMButton(title: "Salvar", addIn: self.tableView)
+            self.mainButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+            self.mainButton?.alpha = 0.0
+        }
         self.updateButtonLayout()
     }
     
     @objc
     private func saveButtonTapped() {
+        self.view.endEditing(true)
+        
         self.viewModel?.cardNumber = self.numberTextField.text
         self.viewModel?.cardName = self.nameTextField.text
         self.viewModel?.expiryDate = self.expireTextField.text
@@ -184,7 +188,7 @@ class CreditCardTableViewController: UITableViewController {
             valid = false
         }
         
-        if (expireTextField.text ?? "").count != 7 && !(expireTextField.text ?? "").isEmpty {
+        if (expireTextField.text ?? "").count != 5 && !(expireTextField.text ?? "").isEmpty {
             if showError {
                 expireTextField.setError(TextFieldError.invalid("data inválida"), animated: true)
             }

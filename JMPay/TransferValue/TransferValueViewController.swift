@@ -51,6 +51,7 @@ class TransferValueViewController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         self.view.addGestureRecognizer(tap)
+        self.setupLayout()
     }
     
     @objc
@@ -81,12 +82,23 @@ class TransferValueViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupNavigation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.setupTextField()
     }
     
     private func setupTextField() {
         self.valueTextField.becomeFirstResponder()
         self.valueTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+    }
+    
+    private func setupLayout() {
+        guard let viewModel = viewModel else { return }
+        self.usernameLabel.text = viewModel.contact?.username ?? ""
+        self.creditCardLabel.text = viewModel.cardNumber ?? ""
+        self.userImage.setImage(with: viewModel.contact?.image)
     }
     
     @objc

@@ -52,7 +52,7 @@ class TransactionViewModel {
     
     var cardNumber: String? {
         get {
-            return model.cardNumber ?? ""
+            return "Mastercard \(model.cardNumber?.suffix(4) ?? "") • "
         }
         set {
             model.cardNumber = newValue?.onlyNumbers()

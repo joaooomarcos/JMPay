@@ -39,11 +39,6 @@ class ContactsViewController: UIViewController {
         self.setupNavigation(preferLarge: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.performSegue(withIdentifier: "presentReceipt", sender: nil)
-    }
-    
     // MARK: - Privates
     
     private func setup() {
@@ -92,7 +87,7 @@ extension ContactsViewController: UITableViewDataSource {
 
 extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showPrimingCardController", sender: nil)
+        self.performSegue(withIdentifier: "showPrimingCardController", sender: viewModel.element(for: indexPath.row))
     }
 }
 
