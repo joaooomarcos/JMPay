@@ -17,11 +17,14 @@ class JMButton: UIButton {
     
     // MARK: - Init
     
-    convenience init(title: String, addIn view: UIView) {
+    convenience init(title: String) {
         self.init(frame: CGRect.zero)
+        self.setTitle(title, for: .normal)
+    }
+    
+    func addIn(_ view: UIView) {
         view.addSubview(self)
         self.setupConstraints(view: view)
-        self.setTitle(title, for: .normal)
     }
     
     private override init(frame: CGRect) {

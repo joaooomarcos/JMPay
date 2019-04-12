@@ -20,6 +20,9 @@ class TransferValueViewController: UIViewController {
     
     // MARK: - Outlets
 
+    @IBOutlet weak var valueStackView: UIStackView!
+    @IBOutlet weak var cardStackView: UIStackView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var userImage: JMImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var valueTextField: UITextField!
@@ -31,15 +34,36 @@ class TransferValueViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func editButtonTapped() {
-        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction private func payButtonTapped() {
-        self.viewModel?.doTransfer(value: self.valueTextField.text ?? "", completion: { success, _ in
-            if success {
-                self.navigationController?.popToRootViewController(animated: true)
+        self.animateLoading(show: true)
+        self.viewModel?.doTransfer(value: self.valueTextField.text ?? "", completion: { receipt, _ in
+            self.animateLoading(show: false)
+            if let receipt = receipt {
+                if let controller = self.navigationController?.viewControllers.first as? ContactsViewController {
+                    controller.receipt = receipt
+                }
+                self.navigationController?.popToRootViewController(animated: false)
+            } else {
+                self.showAlert(title: "Erro", message: "Erro ao processar o pagamento")
             }
         })
+    }
+    
+    private func animateLoading(show: Bool) {
+        self.view.endEditing(true)
+        self.payButton.isEnabled = !show
+        if show {
+            self.activityIndicator.startAnimating()
+        } else {
+            self.activityIndicator.stopAnimating()
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.valueStackView.alpha = show ? 0.0 : 1.0
+            self.cardStackView.alpha = show ? 0.0 : 1.0
+        }, completion: nil)
     }
     
     // MARK: - Life Cycle
@@ -95,6 +119,7 @@ class TransferValueViewController: UIViewController {
     }
     
     private func setupLayout() {
+        self.activityIndicator.stopAnimating()
         guard let viewModel = viewModel else { return }
         self.usernameLabel.text = viewModel.contact?.username ?? ""
         self.creditCardLabel.text = viewModel.cardNumber ?? ""

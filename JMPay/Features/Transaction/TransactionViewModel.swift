@@ -79,14 +79,21 @@ class TransactionViewModel {
         }
     }
     
-    func doTransfer(value: String, completion: @escaping (_ success: Bool, _ error: String?) -> Void) {
+    func doTransfer(value: String, completion: @escaping (_ receipt: ReceiptViewModel?, _ error: String?) -> Void) {
+        self.value = value
         self.api.doTransfer(transaction: model) { result in
             switch result {
             case .success(let response):
-                let status = response.receipt?.success ?? false
-                completion(status, nil)
+                if let receipt = response.receipt, let status = receipt.success, status {
+                    let viewModel = ReceiptViewModel(receipt)
+                    viewModel.lastDigitsCard = "\(self.model.cardNumber?.suffix(4) ?? "")"
+                    completion(viewModel, nil)
+                    return
+                }
+                
+                completion(nil, nil)
             case .error(let error):
-                completion(false, error.localizedDescription)
+                completion(nil, error.localizedDescription)
             }
         }
     }

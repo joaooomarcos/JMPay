@@ -9,6 +9,12 @@
 import UIKit
 
 class ReceiptViewController: UIViewController {
+    
+    // MARK: - Variables
+    
+    var viewModel: ReceiptViewModel?
+    
+    // MARK: - Outlets
 
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var swipeView: UIView!
@@ -20,10 +26,44 @@ class ReceiptViewController: UIViewController {
     @IBOutlet private weak var cardValueLabel: UILabel!
     @IBOutlet private weak var totalValueLabel: UILabel!
     
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerHandler))
         self.swipeView.addGestureRecognizer(panGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupForAnimation()
+        self.setupLayout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.animateShow()
+    }
+    
+    private func setupForAnimation() {
+        self.containerView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
+    }
+    
+    private func animateShow() {
+        UIView.animate(withDuration: 0.3) {
+            self.containerView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    private func setupLayout() {
+        guard let viewModel = viewModel else { return }
+        self.userImage.setImage(with: viewModel.contactImage)
+        self.usernameLabel.text = viewModel.contactName
+        self.dateLabel.text = viewModel.transactionDate
+        self.transactionLabel.text = viewModel.transactionId
+        self.cardLabel.text = viewModel.cardName
+        self.cardValueLabel.text = viewModel.value
+        self.totalValueLabel.text = viewModel.value
     }
     
     var initialTouchPoint = CGPoint(x: 0, y: 0)

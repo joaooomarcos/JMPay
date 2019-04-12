@@ -14,9 +14,15 @@ class CreditCardTableViewController: UITableViewController {
     // MARK: - Variables
     
     var viewModel: TransactionViewModel?
+    var buttonBottomConstraint: NSLayoutConstraint?
     
-    var keyboardHeight: CGFloat = 0.0
-    var mainButton: JMButton?
+    var keyboardHeight: CGFloat = 0.0 {
+        didSet {
+            self.updateButtonLayout()
+        }
+    }
+    
+    var mainButton: JMButton
     var oldValue = false
     var allFieldsValid: Bool = false {
         didSet {
@@ -55,11 +61,17 @@ class CreditCardTableViewController: UITableViewController {
     
     // MARK: - Life Cycle
     
+    required init?(coder aDecoder: NSCoder) {
+        self.mainButton = JMButton(title: "Salvar")
+        super.init(coder: aDecoder)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupTextFields()
-        self.setupKeyboard()
+        
         self.setupTap()
     }
     
@@ -77,11 +89,23 @@ class CreditCardTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupNavigation()
+        self.mainButton.alpha = 0.0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.setupKeyboard()
         self.addButton()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.mainButton.alpha = 0.0
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc
@@ -93,14 +117,12 @@ class CreditCardTableViewController: UITableViewController {
     private func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             self.keyboardHeight = keyboardFrame.cgRectValue.height
-            self.updateButtonLayout()
         }
     }
     
     @objc
     private func keyboardWillHide(_ notification: Notification) {
         self.keyboardHeight = 0.0
-        self.updateButtonLayout()
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -122,12 +144,19 @@ class CreditCardTableViewController: UITableViewController {
     }
     
     private func addButton() {
-        if self.mainButton == nil {
-            self.mainButton = JMButton(title: "Salvar", addIn: self.tableView)
-            self.mainButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
-            self.mainButton?.alpha = 0.0
+        self.mainButton.addIn(self.tableView)
+//        if self.mainButton == nil {
+//            self.mainButton = JMButton(title: "Salvar", addIn: self.tableView)
+            self.mainButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+            self.mainButton.alpha = 0.0
+//        }
+        if let superview = view.superview {
+            self.buttonBottomConstraint = mainButton.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -12)
+            self.buttonBottomConstraint?.isActive = true
         }
+        
         self.updateButtonLayout()
+        
     }
     
     @objc
@@ -143,13 +172,12 @@ class CreditCardTableViewController: UITableViewController {
     }
     
     private func updateButtonLayout() {
-        if let button = mainButton, let superview = view.superview {
-            button.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: -12 - keyboardHeight).isActive = true
+            buttonBottomConstraint?.constant = -12 - keyboardHeight
+            
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
-                self.mainButton?.alpha = self.allFieldsValid ? 1.0 : 0.0
+                self.mainButton.alpha = self.allFieldsValid ? 1.0 : 0.0
             }
-        }
     }
     
     private func verifyField(_ textField: MFTextField, showError: Bool = true) {

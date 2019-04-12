@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,6 +79,10 @@
                                     <outlet property="delegate" destination="cYn-g4-HCQ" id="Q5v-PW-jMZ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="akT-2w-bsJ">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.066666666669999999" green="0.78039215689999997" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gB-ED-pF1" customClass="CustomSearchBarView" customModule="JMPay" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="116" width="375" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,6 +93,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="akT-2w-bsJ" firstAttribute="centerX" secondItem="nJP-WF-eLq" secondAttribute="centerX" id="997-ng-7qT"/>
+                            <constraint firstItem="akT-2w-bsJ" firstAttribute="centerY" secondItem="nJP-WF-eLq" secondAttribute="centerY" id="Aev-fj-kwX"/>
                             <constraint firstItem="9gB-ED-pF1" firstAttribute="trailing" secondItem="QKf-bO-HrQ" secondAttribute="trailing" id="KHh-Ra-mkJ"/>
                             <constraint firstItem="EEq-cF-PxQ" firstAttribute="trailing" secondItem="QKf-bO-HrQ" secondAttribute="trailing" id="PuQ-j3-oxr"/>
                             <constraint firstItem="9gB-ED-pF1" firstAttribute="top" secondItem="QKf-bO-HrQ" secondAttribute="top" id="RlO-8H-2fi"/>
@@ -102,10 +107,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Contatos" id="vsP-i3-pUM"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="akT-2w-bsJ" id="d8I-5r-fKN"/>
                         <outlet property="searchBarView" destination="9gB-ED-pF1" id="x7o-6x-K3U"/>
                         <outlet property="tableView" destination="EEq-cF-PxQ" id="8qY-Wv-aOU"/>
                         <segue destination="uKR-BC-pF2" kind="show" identifier="showPrimingCardController" id="isP-vf-gKW"/>
-                        <segue destination="v6a-YR-hAa" kind="presentation" identifier="presentReceipt" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="IX9-f9-wjn"/>
+                        <segue destination="v6a-YR-hAa" kind="presentation" identifier="presentReceipt" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Zp9-sB-iIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2l-US-MiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -495,6 +501,10 @@
                                     <action selector="payButtonTapped" destination="n6s-70-pRi" eventType="touchUpInside" id="OzH-uX-yGq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HJ8-7c-0gK">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.066666666669999999" green="0.78039215689999997" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.1137254902" green="0.1176470588" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -504,30 +514,35 @@
                             <constraint firstItem="6O0-YZ-a1R" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="Jgj-np-MLQ"/>
                             <constraint firstItem="he1-sJ-n2w" firstAttribute="top" secondItem="ktq-7T-yYY" secondAttribute="top" constant="24" id="PaK-MX-U64"/>
                             <constraint firstItem="dkP-do-tmZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ktq-7T-yYY" secondAttribute="leading" constant="20" id="Q08-52-Msg"/>
+                            <constraint firstItem="HJ8-7c-0gK" firstAttribute="centerY" secondItem="FGd-4F-TL0" secondAttribute="centerY" id="Qth-cr-Ddz"/>
                             <constraint firstItem="v9J-Cx-op6" firstAttribute="leading" secondItem="ktq-7T-yYY" secondAttribute="leading" constant="12" id="RtA-iY-DFY"/>
                             <constraint firstItem="v9J-Cx-op6" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="UkE-98-Zwu"/>
                             <constraint firstItem="dkP-do-tmZ" firstAttribute="top" secondItem="Xbm-6H-Tf8" secondAttribute="bottom" constant="40" id="X8r-v2-z52"/>
                             <constraint firstItem="Xbm-6H-Tf8" firstAttribute="top" secondItem="6O0-YZ-a1R" secondAttribute="bottom" constant="32" id="aTw-ax-8i6"/>
                             <constraint firstItem="dkP-do-tmZ" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="crE-jU-qFC"/>
                             <constraint firstItem="he1-sJ-n2w" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="fhT-bS-VGh"/>
+                            <constraint firstItem="HJ8-7c-0gK" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="jSN-0H-AXL"/>
                             <constraint firstItem="ktq-7T-yYY" firstAttribute="bottom" secondItem="v9J-Cx-op6" secondAttribute="bottom" constant="12" id="nmE-Cb-Vr5"/>
                             <constraint firstItem="Xbm-6H-Tf8" firstAttribute="centerX" secondItem="FGd-4F-TL0" secondAttribute="centerX" id="yyL-Px-nqb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktq-7T-yYY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="HJ8-7c-0gK" id="FUJ-MQ-Yb9"/>
                         <outlet property="buttonBottomConstraint" destination="nmE-Cb-Vr5" id="v7b-zM-JWC"/>
+                        <outlet property="cardStackView" destination="dkP-do-tmZ" id="Thh-p7-ZsC"/>
                         <outlet property="creditCardLabel" destination="KzJ-QZ-tqF" id="ljq-nJ-0vD"/>
                         <outlet property="payButton" destination="v9J-Cx-op6" id="d92-mr-4PW"/>
                         <outlet property="symbolLabel" destination="ce7-0Q-rES" id="Nli-xb-1EU"/>
                         <outlet property="userImage" destination="he1-sJ-n2w" id="MWv-3A-5aM"/>
                         <outlet property="usernameLabel" destination="6O0-YZ-a1R" id="dnr-er-z2p"/>
+                        <outlet property="valueStackView" destination="Xbm-6H-Tf8" id="E10-Jz-uQ6"/>
                         <outlet property="valueTextField" destination="n2z-fB-iqY" id="ANr-Wc-4s0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8E1-he-U1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4316" y="154"/>
+            <point key="canvasLocation" x="4354" y="162"/>
         </scene>
         <!--Receipt View Controller-->
         <scene sceneID="zuG-jw-IAh">
@@ -711,7 +726,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbs-49-Se2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="930"/>
+            <point key="canvasLocation" x="1753" y="908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Py-3M-ArM">

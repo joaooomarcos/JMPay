@@ -13,11 +13,13 @@ class ContactsViewController: UIViewController {
     // MARK: - Variables
     
     private let viewModel: ContactsViewModel
+    var receipt: ReceiptViewModel?
     
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBarView: CustomSearchBarView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Init
     
@@ -36,7 +38,12 @@ class ContactsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setupNavigation(preferLarge: true)
+        self.setupNavigation(preferLarge: true, bartintColor: UIColor(hex: "#1D1E20"))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.verifyForReceipt()
     }
     
     // MARK: - Privates
@@ -46,16 +53,28 @@ class ContactsViewController: UIViewController {
     }
     
     private func loadData() {
+        self.activityIndicator.startAnimating()
         self.viewModel.load { success, _ in
+            self.activityIndicator.stopAnimating()
             if success {
-                self.tableView.reloadData()
+                self.tableView.reloadData(animated: true)
+            } else {
+                self.showAlert(title: "Erro", message: "Problemas ao carregar", firstButtonTitle: "Tentar novamente", firstButtonAction: { _ in
+                    self.loadData()
+                })
             }
         }
     }
     
     private func filter(text: String) {
         self.viewModel.filter(text: text) {
-            self.tableView.reloadData()
+            self.tableView.reloadData(animated: true)
+        }
+    }
+    
+    private func verifyForReceipt() {
+        if receipt != nil {
+            self.performSegue(withIdentifier: "presentReceipt", sender: nil)
         }
     }
     
@@ -64,6 +83,19 @@ class ContactsViewController: UIViewController {
             let newViewModel = TransactionViewModel()
             newViewModel.contact = contact
             destination.viewModel = newViewModel
+        } else if let destination = segue.destination as? ReceiptViewController {
+            destination.viewModel = self.receipt
+            self.receipt = nil
+        }
+    }
+}
+
+extension UITableView {
+    func reloadData(animated: Bool = false) {
+        if animated {
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {self.reloadData()}, completion: nil)
+        } else {
+            self.reloadData()
         }
     }
 }
