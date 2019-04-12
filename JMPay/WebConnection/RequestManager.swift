@@ -20,33 +20,31 @@ class RequestManager {
         
         let encoding: ParameterEncoding = method == .get ? URLEncoding.queryString : JSONEncoding.default
         
-        self.manager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success(let resValue):
-                    if let resDic = resValue as? [String: Any] {
-                        let decoder = JSONDecoder()
-                        do {
-                            let object = try decoder.decode(T.self, fromDict: resDic)
-                            completion(.success(object))
-                        } catch {
-                            completion(.error(APIError.jsonConversionFailure))
-                        }
-                    } else if let resDic = resValue as? [[String: Any]] {
-                        let decoder = JSONDecoder()
-                        do {
-                            let objects = try decoder.decode(T.self, fromArray: resDic)
-                            completion(.success(objects))
-                        } catch {
-                            completion (.error(APIError.jsonConversionFailure))
-                        }
-                    } else {
-                        completion(.error(APIError.jsonParsingFailure))
+        self.manager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).validate().responseJSON { response in
+            switch response.result {
+            case .success(let resValue):
+                if let resDic = resValue as? [String: Any] {
+                    let decoder = JSONDecoder()
+                    do {
+                        let object = try decoder.decode(T.self, fromDict: resDic)
+                        completion(.success(object))
+                    } catch {
+                        completion(.error(APIError.jsonConversionFailure))
                     }
-                case .failure(let error):
-                    completion(.error(error))
+                } else if let resDic = resValue as? [[String: Any]] {
+                    let decoder = JSONDecoder()
+                    do {
+                        let objects = try decoder.decode(T.self, fromArray: resDic)
+                        completion(.success(objects))
+                    } catch {
+                        completion (.error(APIError.jsonConversionFailure))
+                    }
+                } else {
+                    completion(.error(APIError.jsonParsingFailure))
                 }
+            case .failure(let error):
+                completion(.error(error))
+            }
         }
     }
 }

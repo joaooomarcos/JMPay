@@ -16,6 +16,10 @@ class ContactViewModel {
         self.model = model
     }
     
+    var id: Int {
+        return model.id ?? 0
+    }
+    
     var name: String {
         return model.name ?? ""
     }

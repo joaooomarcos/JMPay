@@ -51,7 +51,7 @@ class ContactsViewController: UIViewController {
     }
     
     private func loadData() {
-        self.viewModel.load { success, error in
+        self.viewModel.load { success, _ in
             if success {
                 self.tableView.reloadData()
             }
@@ -61,6 +61,14 @@ class ContactsViewController: UIViewController {
     private func filter(text: String) {
         self.viewModel.filter(text: text) {
             self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PrimingCardViewController, let contact = sender as? ContactViewModel {
+            let newViewModel = TransactionViewModel()
+            newViewModel.contact = contact
+            destination.viewModel = newViewModel
         }
     }
 }

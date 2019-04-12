@@ -27,6 +27,6 @@ extension Endpoint {
             return urlBase
         }
         
-        fatalError()
+        fatalError("Fail on get Base URL")
     }
 }

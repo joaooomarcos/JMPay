@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CustomSearchBarDelegate {
+protocol CustomSearchBarDelegate: class {
     func customSearchDidChange(_ customSearch: CustomSearchBarView, text: String)
     func customSearchDidReturn(_ customSearch: CustomSearchBarView, text: String)
 }
@@ -16,7 +16,7 @@ protocol CustomSearchBarDelegate {
 class CustomSearchBarView: UIView {
     
     private let textfield: UITextField
-    var delegate: CustomSearchBarDelegate?
+    weak var delegate: CustomSearchBarDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         self.textfield = UITextField(frame: CGRect.zero)
@@ -43,8 +43,9 @@ class CustomSearchBarView: UIView {
         self.addSubview(textfield)
         
         textfield.placeholder = "A quem você deseja pagar?"
-        textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor(hex: "#ACB1BD"),
-             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor(hex: "#ACB1BD"),
+                          NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)]
+        textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: attributes)
         
         let imageView = UIImageView(image: #imageLiteral(resourceName: "icon-search"))
         imageView.contentMode = .scaleAspectFit

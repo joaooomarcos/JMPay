@@ -26,35 +26,32 @@ class ReceiptViewController: UIViewController {
         self.swipeView.addGestureRecognizer(panGesture)
     }
     
-    // define a variable to store initial touch position
-    var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
+    var initialTouchPoint = CGPoint(x: 0, y: 0)
     
     @objc
     private func panGestureRecognizerHandler(_ sender: UIPanGestureRecognizer) {
         let touchPoint = sender.location(in: self.view?.window)
+        let size = self.containerView.frame.size
         
         if sender.state == UIGestureRecognizer.State.began {
             initialTouchPoint = touchPoint
         } else if sender.state == UIGestureRecognizer.State.changed {
             if touchPoint.y - initialTouchPoint.y > 0 {
-                self.containerView.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y + 92.0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
+                self.containerView.frame = CGRect(x: 0, y: touchPoint.y - initialTouchPoint.y + 92.0, width: size.width, height: size.height)
             }
         } else if sender.state == UIGestureRecognizer.State.ended || sender.state == UIGestureRecognizer.State.cancelled {
             if touchPoint.y - initialTouchPoint.y > 180 {
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.containerView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
-                }) { _ in
+                    self.containerView.frame = CGRect(x: 0, y: self.view.frame.height, width: size.width, height: size.height)
+                }, completion: { _ in
                     self.dismiss(animated: false, completion: nil)
-                }
-                
+                })
             } else {
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.containerView.frame = CGRect(x: 0, y: 92, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
+                    let size = self.containerView.frame.size
+                    self.containerView.frame = CGRect(x: 0, y: 92, width: size.width, height: size.height)
                 })
             }
         }
     }
-
 }
-
-

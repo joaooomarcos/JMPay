@@ -10,6 +10,12 @@ import UIKit
 
 class TransferValueViewController: UIViewController {
     
+    // MARK: - Variables
+    
+    var viewModel: TransactionViewModel?
+    
+    // MARK: - Constants
+    
     private var defaultMargin: CGFloat = 12.0
     
     // MARK: - Outlets
@@ -24,12 +30,16 @@ class TransferValueViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func editButtonTapped() {
+    @IBAction private func editButtonTapped() {
         
     }
     
-    @IBAction func payButtonTapped() {
-        
+    @IBAction private func payButtonTapped() {
+        self.viewModel?.doTransfer(value: self.valueTextField.text ?? "", completion: { success, _ in
+            if success {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        })
     }
     
     // MARK: - Life Cycle
@@ -106,11 +116,12 @@ extension String {
         
         do {
             let regex = try NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-            amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+            let options = NSRegularExpression.MatchingOptions(rawValue: 0)
+            let range = NSRange(location: 0, length: self.count)
+            amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: options, range: range, withTemplate: "")
         } catch {
             return "0,00"
         }
-        
         
         let double = (amountWithPrefix as NSString).doubleValue
         let number = NSNumber(value: (double / 100))

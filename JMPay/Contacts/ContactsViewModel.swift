@@ -47,7 +47,7 @@ class ContactsViewModel {
     func filter(text: String, completion: () -> Void) {
         if !text.isEmpty {
             self.displayItems = items.filter({( item: ContactViewModel) -> Bool in
-                return item.name.lowercased().contains(text.lowercased()) || item.username.lowercased().contains(text.lowercased())
+                item.name.lowercased().contains(text.lowercased()) || item.username.lowercased().contains(text.lowercased())
             })
         } else {
             self.displayItems = items
